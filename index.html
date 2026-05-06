@@ -227,6 +227,7 @@
     .section-head { max-width: 760px; margin: 0 auto 68px; text-align: center; }
     .section-kicker { color: var(--primary-color); font-family: var(--latin); text-transform: uppercase; letter-spacing: .10em; font-weight: 600; font-size: 13px; margin-bottom: 13px; }
     .section-title { font-family: var(--display); font-size: clamp(30px, 3.8vw, 52px); line-height: 1.18; letter-spacing: .01em; color: var(--primary-color); font-weight: 700; text-shadow: 0 0 18px rgba(37,199,96,.30); }
+    .section-title .heading-line { display: block; white-space: nowrap; }
     .section-title::after { margin: 20px auto 0; background: linear-gradient(90deg, transparent, var(--primary-color), var(--third-color), transparent); }
     .section-copy { color: var(--text-muted); font-size: 16px; max-width: 680px; margin: 20px auto 0; }
     .panel, .product-card, .search-panel, .compare-card, .quality-card, .step {
@@ -246,7 +247,7 @@
 
     .products { display:grid; grid-template-columns: 1fr; gap: 42px; }
     .products-intro { max-width: 980px; }
-    .products-intro .section-title { max-width: 920px; margin: 0 auto; }
+    .products-intro .section-title { max-width: 920px; margin: 0 auto; font-size: clamp(28px, 3.4vw, 48px); line-height: 1.22; }
     .product-card { position:relative; min-height: auto; width:min(780px, 100%); padding: 42px; overflow:hidden; }
     .product-card::before { content:""; position:absolute; width:300px; height:300px; right:-80px; top:-70px; border-radius:50%; background: radial-gradient(circle, rgba(37,199,96,.20), transparent 70%); opacity:.95; pointer-events:none; }
     .product-card.confidence { margin-left:auto; text-align:right; color:var(--secondary-color); background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(37,199,96,.06) 42%, #000 100%); border-color: rgba(255,255,255,.78); }
@@ -354,7 +355,8 @@
       .eyebrow { font-size: 13px; }
       .hero .lead { font-size: 14px; line-height:1.8; }
       .hero-actions .btn { width:100%; }
-      .about-simple .section-title { font-size: clamp(40px, 12vw, 58px); }
+      .about-simple .section-title { font-size: clamp(32px, 10vw, 58px); line-height: 1.08; }
+      .products-intro .section-title { font-size: clamp(21px, 6.1vw, 32px); line-height: 1.28; letter-spacing: 0; }
       .about-subtitle { font-size: 19px; }
       .product-card, .search-panel, .compare-card, .quality-card, .final-cta { padding: 22px; }
       .product-card { min-height:auto; width:100%; }
@@ -409,7 +411,7 @@
     <section id="about">
       <div class="container">
         <div class="section-head about-simple">
-          <h2 class="section-title">What is<br>Mother Vegetable</h2>
+          <h2 class="section-title fixed-break"><span class="heading-line">What is</span><span class="heading-line">Mother Vegetable</span></h2>
           <p class="about-subtitle">栄養・浄化・再生の力を持つ<br>35億年前の地球最初の生命</p>
           <p class="section-copy">Mother Vegetableは、35億年前の地球に誕生した最初の生命の力を受け継ぐ存在です。</p>
           <p class="section-copy">育つ過程で二酸化炭素を吸収し、人々に必要な高純度のたんぱく質や医薬品原料をも生み出します。</p>
@@ -420,8 +422,7 @@
     <section id="products">
       <div class="container">
         <div class="section-head products-intro">
-          <div class="section-kicker">Achieve / Confidence</div>
-          <h2 class="section-title">Mother Vegetableから生まれた、2つの「地球の力」がすべてのアイテムに。</h2>
+          <h2 class="section-title fixed-break"><span class="heading-line">Mother Vegetable から生まれた</span><span class="heading-line">2つの「地球の力」が全てのアイテムに。</span></h2>
         </div>
         <div class="products">
           <article class="product-card achieve">
