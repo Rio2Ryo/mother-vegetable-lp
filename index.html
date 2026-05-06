@@ -237,20 +237,32 @@
       transition: all .3s ease;
     }
 
-    .about-simple { max-width: 840px; margin: 0 auto; text-align: center; }
-    .about-simple .section-copy { max-width: 760px; line-height: 2.05; }
+    .about-simple { max-width: 900px; margin: 0; text-align: left; }
+    .about-simple .section-title { font-size: clamp(46px, 6.4vw, 82px); line-height: 1.05; font-weight: 800; letter-spacing: .01em; }
+    .about-simple .section-title::after { margin-left: 0; background: linear-gradient(90deg, var(--primary-color), var(--third-color), transparent); }
+    .about-subtitle { color: var(--secondary-color); font-family: var(--display); font-size: clamp(20px, 2.4vw, 32px); line-height: 1.35; font-weight: 700; max-width: 760px; margin: 28px 0 0; }
+    .about-simple .section-copy { max-width: 760px; margin-left: 0; line-height: 2.05; }
     .about-simple .section-copy + .section-copy { margin-top: 14px; }
 
-    .products { display:grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
-    .product-card { position:relative; min-height: 470px; padding: 36px; overflow:hidden; }
-    .product-card::before { content:""; position:absolute; width:270px; height:270px; right:-60px; top:-40px; border-radius:50%; background: radial-gradient(circle, rgba(37,199,96,.20), transparent 70%); opacity:.95; }
-    .product-card.confidence::before { background: radial-gradient(circle, rgba(60,128,99,.20), transparent 70%); }
-    .product-visual { position:relative; height: 210px; margin: 10px 0 24px; }
-    .powder-bowl { position:absolute; left:50%; top:54%; width:190px; height:72px; transform:translate(-50%,-50%); border-radius:50%; background: radial-gradient(ellipse at center, var(--primary-color) 0 24%, #07120b 25% 44%, #fff 45% 70%, #3C8063 71%); box-shadow: 0 0 34px rgba(37,199,96,.25); }
-    .bottle { position:absolute; left:50%; top:47%; width:92px; height:184px; transform:translate(-50%,-50%); border-radius: 34px 34px 22px 22px; border: 2px solid rgba(37,199,96,.55); background: linear-gradient(90deg, rgba(255,255,255,.20), rgba(37,199,96,.22), rgba(255,255,255,.08)); box-shadow: 0 0 38px rgba(37,199,96,.20); }
-    .bottle::before { content:""; position:absolute; left:27px; top:-27px; width:38px; height:34px; border-radius: 10px 10px 6px 6px; background:#050806; border: 1px solid rgba(37,199,96,.55); }
+    .products { display:grid; grid-template-columns: 1fr; gap: 42px; }
+    .products-intro { max-width: 980px; }
+    .products-intro .section-title { max-width: 920px; margin: 0 auto; }
+    .product-card { position:relative; min-height: auto; width:min(780px, 100%); padding: 42px; overflow:hidden; }
+    .product-card::before { content:""; position:absolute; width:300px; height:300px; right:-80px; top:-70px; border-radius:50%; background: radial-gradient(circle, rgba(37,199,96,.20), transparent 70%); opacity:.95; pointer-events:none; }
+    .product-card.confidence { margin-left:auto; text-align:right; color:var(--secondary-color); background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(37,199,96,.06) 42%, #000 100%); border-color: rgba(255,255,255,.78); }
+    .product-card.confidence::before { left:-90px; right:auto; background: radial-gradient(circle, rgba(255,255,255,.24), rgba(37,199,96,.10) 44%, transparent 72%); }
+    .product-eyebrow { display:block; color: var(--primary-color); font-family: var(--display); font-size: 14px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+    .product-lead { display:block; color: var(--secondary-color); font-size: clamp(19px, 2vw, 28px); line-height:1.45; font-weight: 800; margin-bottom: 18px; }
+    .product-copy { color:var(--text-muted); font-size: 16px; line-height: 2; max-width: 620px; margin:0; }
+    .product-card.confidence .product-eyebrow, .product-card.confidence h3 { color: #fff; text-shadow: 0 0 20px rgba(255,255,255,.34); }
+    .product-card.confidence .product-lead, .product-card.confidence .product-copy { color: rgba(255,255,255,.90); margin-left:auto; }
+    .product-actions { margin-top: 28px; display:flex; justify-content:flex-start; }
+    .product-card.confidence .product-actions { justify-content:flex-end; }
+    .product-card.confidence .btn { background:#fff; border-color:#fff; color:#001d0c; }
+    .product-card.confidence .btn:hover { background:var(--primary-color); border-color:var(--primary-color); color:#000; }
     .tag-cloud { display:flex; flex-wrap:wrap; gap:9px; margin-top: 18px; }
     .product-card h3, .story-card h3, .quality-card h3, .compare-card h3 { font-family: var(--display); font-size: 30px; line-height:1.18; color:var(--primary-color); }
+    .product-card h3 { font-size: clamp(38px, 4.2vw, 58px); margin-bottom: 10px; }
     .product-card p, .story-card p, .quality-card p { color:var(--text-muted); }
 
     .dark-room { background: #000; color: var(--secondary-color); border-top: 1px solid var(--primary-color); border-bottom: 1px solid var(--primary-color); border-radius: 0; padding: 100px 0; margin: 30px 0; width:100%; position:relative; overflow:hidden; }
@@ -342,8 +354,14 @@
       .eyebrow { font-size: 13px; }
       .hero .lead { font-size: 14px; line-height:1.8; }
       .hero-actions .btn { width:100%; }
+      .about-simple .section-title { font-size: clamp(40px, 12vw, 58px); }
+      .about-subtitle { font-size: 19px; }
       .product-card, .search-panel, .compare-card, .quality-card, .final-cta { padding: 22px; }
-      .product-card { min-height:auto; }
+      .product-card { min-height:auto; width:100%; }
+      .product-card.confidence { text-align:left; }
+      .product-card.confidence .product-copy { margin-left:0; }
+      .product-card.confidence .product-actions { justify-content:flex-start; }
+      .product-actions .btn { width:100%; }
       .dark-room, .vision { padding: 64px 0; }
       .factory-map { min-height: 480px; }
       .factory-center { width:165px; height:165px; font-size:22px; }
@@ -391,8 +409,8 @@
     <section id="about">
       <div class="container">
         <div class="section-head about-simple">
-          <div class="section-kicker">What is &quot;Mother Vegetable&quot;</div>
-          <h2 class="section-title">栄養・浄化・再生の力を持つ<br>35億年前の地球最初の生命</h2>
+          <h2 class="section-title">What is Mother Vegetable</h2>
+          <p class="about-subtitle">栄養・浄化・再生の力を持つ<br>35億年前の地球最初の生命</p>
           <p class="section-copy">Mother Vegetableは、35億年前の地球に誕生した最初の生命の力を受け継ぐ存在です。</p>
           <p class="section-copy">育つ過程で二酸化炭素を吸収し、人々に必要な高純度のたんぱく質や医薬品原料をも生み出します。</p>
         </div>
@@ -401,23 +419,24 @@
 
     <section id="products">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head products-intro">
           <div class="section-kicker">Achieve / Confidence</div>
-          <h2 class="section-title">内側から支える栄養と、外側から守るケア。</h2>
-          <p class="section-copy">食事、美容、ペットケア、日用品まで。毎日の暮らしへ自然に広がります。</p>
+          <h2 class="section-title">Mother Vegetableから生まれた、2つの「地球の力」がすべてのアイテムに。</h2>
         </div>
         <div class="products">
-          <article class="product-card">
+          <article class="product-card achieve">
+            <span class="product-eyebrow">Achieve</span>
             <h3>Achieve</h3>
-            <p>地球最古の栄養を、毎日の力に。高栄養パウダーとして幅広く活用できます。</p>
-            <div class="product-visual"><div class="powder-bowl"></div></div>
-            <div class="tag-cloud"><span class="tag">たんぱく質</span><span class="tag">ミネラル</span><span class="tag">フィコシアニン</span><span class="tag">スポーツ栄養</span></div>
+            <strong class="product-lead">高たんぱく質＋全48種類の天然栄養</strong>
+            <p class="product-copy">Mother Vegetableから生まれた高栄養食品「Achieve」。<br>たんぱく質、ミネラル、ビタミン、フィコシアニンなどを含み、<br>食事、調味料、飲料、ペット、スポーツ栄養まで幅広く活用できます。<br>現代の食に、地球最古の生命力を加える素材です。</p>
+            <div class="product-actions"><a class="btn" href="#">Achieveとのコラボ商品はこちら</a></div>
           </article>
           <article class="product-card confidence">
+            <span class="product-eyebrow">Confidence</span>
             <h3>Confidence</h3>
-            <p>人と動物をやさしく守る、自然由来のケア素材。美容・日用品のベースへ。</p>
-            <div class="product-visual"><div class="bottle"></div></div>
-            <div class="tag-cloud"><span class="tag">スキンケア</span><span class="tag">ヘアケア</span><span class="tag">ペットケア</span><span class="tag">日用品</span></div>
+            <strong class="product-lead">純度97%の天然シリカで、やさしく整える。</strong>
+            <p class="product-copy">Mother Vegetableから生まれた白いパウダー「Confidence」。<br>育つ過程で、純度97%の非晶質シリカを生み出します。<br>医薬部外品原料規格もクリアしたシリカは<br>肌や髪、愛するペットにも使用可能で、<br>化粧水やシャンプーに混ぜて1ランク上のアイテムに。</p>
+            <div class="product-actions"><a class="btn" href="#">Confidenceとのコラボ商品はこちら</a></div>
           </article>
         </div>
       </div>
