@@ -231,7 +231,7 @@
     .section-title .heading-line { display: block; white-space: nowrap; }
     .section-title::after { margin: 20px auto 0; background: linear-gradient(90deg, transparent, var(--primary-color), var(--third-color), transparent); }
     .section-copy { color: var(--text-muted); font-size: 16px; max-width: 680px; margin: 20px auto 0; }
-    .panel, .product-card, .search-panel, .quality-card, .step {
+    .panel, .product-card, .search-panel, .step {
       border-radius: var(--radius);
       border: 1px solid var(--primary-color);
       background: var(--background-color);
@@ -265,9 +265,9 @@
     .product-card.confidence .product-actions { justify-content:flex-end; }
     .product-card.confidence .btn { background:#fff; border-color:#fff; color:#001d0c; }
     .product-card.confidence .btn:hover { background:var(--primary-color); border-color:var(--primary-color); color:#000; }
-    .product-card h3, .story-card h3, .quality-card h3 { font-family: var(--display); font-size: 30px; line-height:1.18; color:var(--primary-color); }
+    .product-card h3, .story-card h3 { font-family: var(--display); font-size: 30px; line-height:1.18; color:var(--primary-color); }
     .product-card h3 { font-size: clamp(38px, 4.2vw, 58px); margin-bottom: 10px; }
-    .product-card p, .story-card p, .quality-card p { color:var(--text-muted); }
+    .product-card p, .story-card p { color:var(--text-muted); }
 
     .dark-room { background: #000; color: var(--secondary-color); border-top: 1px solid var(--primary-color); border-bottom: 1px solid var(--primary-color); border-radius: 0; padding: 112px 0; margin: 30px 0; width:100%; position:relative; overflow:hidden; }
     .dark-room::before { content:""; position:absolute; inset:-20%; background: radial-gradient(circle at 50% 8%, rgba(37,199,96,.22), transparent 34%), radial-gradient(circle at 12% 78%, rgba(60,128,99,.18), transparent 32%), radial-gradient(circle at 88% 68%, rgba(37,199,96,.14), transparent 30%); }
@@ -329,10 +329,6 @@
     .step h3 { font-size:21px; font-family:var(--display); color: var(--secondary-color); line-height:1.32; }
     .step p { color:var(--text-muted); font-size:14px; line-height:1.85; }
 
-    .quality-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:36px; }
-    .quality-card { padding:30px; }
-    .quality-icon { width:54px; height:54px; border-radius:50%; background:radial-gradient(circle, var(--primary-color), var(--third-color)); margin-bottom:20px; border:1px solid rgba(37,199,96,.60); box-shadow:var(--glow); }
-
     .vision { position:relative; text-align:center; padding:110px 0; border-radius:0; margin:40px 0; width:100%; overflow:hidden; color:var(--secondary-color); background: radial-gradient(circle at 50% 30%, rgba(37,199,96,.22), transparent 34%), linear-gradient(135deg, #000, #06110a 48%, #000); border-top:1px solid var(--primary-color); border-bottom:1px solid var(--primary-color); }
     .vision::before { content:""; position:absolute; left:50%; top:55%; width:720px; height:720px; transform:translate(-50%,-50%); border-radius:50%; border:1px solid rgba(37,199,96,.28); background: repeating-radial-gradient(circle, rgba(37,199,96,.10) 0 1px, transparent 1px 34px); opacity:.85; }
     .vision .container { position:relative; z-index:2; }
@@ -352,7 +348,7 @@
       .about-simple { margin-left:auto; margin-right:auto; }
       .about-character { min-height:auto; margin-top: 2px; }
       .about-character img { width:min(72vw, 260px); }
-      .products, .quality-grid { grid-template-columns:1fr; }
+      .products { grid-template-columns:1fr; }
       .mv-force-grid, .story-grid { grid-template-columns:1fr; }
       .commerce-intro { max-width: 720px; }
       .commerce-copy .copy-line { display:inline; }
@@ -378,7 +374,7 @@
       .about-simple .section-title { font-size: clamp(32px, 10vw, 58px); line-height: 1.08; }
       .products-intro .section-title { font-size: clamp(21px, 6.1vw, 32px); line-height: 1.28; letter-spacing: 0; }
       .about-subtitle { font-size: 19px; }
-      .product-card, .search-panel, .quality-card { padding: 22px; }
+      .product-card, .search-panel { padding: 22px; }
       .search-shell { min-height: auto; align-items:flex-start; border-radius:24px; flex-direction:column; padding:18px; }
       .search-input { padding-left: 2px; }
       .search-button { width:100%; min-width:0; text-align:center; }
@@ -539,20 +535,6 @@
           <div class="step"><div class="step-number">04 / TEAM SALES</div><h3>メンバーと届ける</h3><p>販売メンバーと一緒に広げ、地域と地球を支える商品を世界へ届けます。</p></div>
         </div>
         <div class="flow-actions"><a class="btn" href="mailto:hello@example.com">商品開発についての詳細はこちら</a></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Our Quality</div>
-          <h2 class="section-title">すべての商品に、地球最古の力を。</h2>
-        </div>
-        <div class="quality-grid">
-          <article class="quality-card"><div class="quality-icon"></div><h3>Earth Origin</h3><p>地球最古の生命由来の原材料を、すべての商品の共通価値に。</p></article>
-          <article class="quality-card"><div class="quality-icon"></div><h3>Clean Technology</h3><p>CO₂を原材料へ変える技術から、自然の力と最新技術を融合。</p></article>
-          <article class="quality-card"><div class="quality-icon"></div><h3>Story Product</h3><p>ただ売れる商品ではなく、品質と物語の両方を持つ商品へ。</p></article>
-        </div>
       </div>
     </section>
 
