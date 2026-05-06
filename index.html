@@ -164,16 +164,13 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(190px, 320px);
+      grid-template-columns: minmax(0, 1fr);
       gap: clamp(28px, 5vw, 64px);
       align-items: center;
       justify-items: center;
-      max-width: 1080px;
+      max-width: 900px;
     }
     .hero-copy { width: 100%; }
-    .hero-character { position:relative; display:flex; justify-content:center; align-items:flex-end; width:100%; margin:0; }
-    .hero-character::before { content:""; position:absolute; left:50%; bottom:8%; width:min(300px, 82%); height:min(300px, 82%); transform:translateX(-50%); border-radius:50%; background: radial-gradient(circle, rgba(37,199,96,.24), rgba(60,128,99,.10) 48%, transparent 72%); filter: blur(2px); opacity:.72; }
-    .hero-character img { position:relative; z-index:1; display:block; width:min(100%, 300px); height:auto; object-fit:contain; filter: drop-shadow(0 22px 32px rgba(0,0,0,.54)) drop-shadow(0 0 20px rgba(37,199,96,.20)); }
     .hero-icon {
       display: block;
       width: clamp(58px, 7vw, 96px);
@@ -242,12 +239,16 @@
       transition: all .3s ease;
     }
 
+    .about-grid { display:grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); gap: clamp(30px, 5vw, 70px); align-items:center; }
     .about-simple { max-width: 900px; margin: 0; text-align: left; }
     .about-simple .section-title { font-size: clamp(46px, 6.4vw, 82px); line-height: 1.05; font-weight: 800; letter-spacing: .01em; }
     .about-simple .section-title::after { margin-left: 0; background: linear-gradient(90deg, var(--primary-color), var(--third-color), transparent); }
     .about-subtitle { color: var(--secondary-color); font-family: var(--display); font-size: clamp(20px, 2.4vw, 32px); line-height: 1.35; font-weight: 700; max-width: 760px; margin: 28px 0 0; }
     .about-simple .section-copy { max-width: 760px; margin-left: 0; line-height: 2.05; }
     .about-simple .section-copy + .section-copy { margin-top: 14px; }
+    .about-character { position:relative; display:flex; justify-content:center; align-items:flex-end; width:100%; min-height: 300px; margin:0; }
+    .about-character::before { content:""; position:absolute; left:50%; bottom:8%; width:min(310px, 84%); height:min(310px, 84%); transform:translateX(-50%); border-radius:50%; background: radial-gradient(circle, rgba(37,199,96,.24), rgba(60,128,99,.10) 48%, transparent 72%); filter: blur(2px); opacity:.72; }
+    .about-character img { position:relative; z-index:1; display:block; width:min(100%, 300px); height:auto; object-fit:contain; filter: drop-shadow(0 22px 32px rgba(0,0,0,.54)) drop-shadow(0 0 20px rgba(37,199,96,.20)); }
 
     .products { display:grid; grid-template-columns: 1fr; gap: 42px; }
     .products-intro { max-width: 980px; }
@@ -382,8 +383,10 @@
       .brand-mark { width:52px; height:52px; }
       .nav { display:none; }
       .hero { min-height:auto; padding-top: 86px; padding-bottom: 84px; }
-      .hero-grid, .factory-grid, .comparison { grid-template-columns: 1fr; }
-      .hero-character img { width:min(64vw, 260px); }
+      .hero-grid, .about-grid, .factory-grid, .comparison { grid-template-columns: 1fr; }
+      .about-simple { margin-left:auto; margin-right:auto; }
+      .about-character { min-height:auto; margin-top: 2px; }
+      .about-character img { width:min(72vw, 260px); }
       .factory-grid > div:first-child { text-align:center; }
       .factory-grid .section-title::after, .factory-grid .section-copy { margin-left:auto; }
       .products, .quality-grid { grid-template-columns:1fr; }
@@ -472,20 +475,20 @@
             <a class="btn" href="#story">MV Productをチェックする</a>
           </div>
         </div>
-        <figure class="hero-character float-reveal" aria-label="Mother Vegetableのキャラクター">
-          <img src="assets/mv-search-character.png" alt="Mother Vegetableのキャラクター" loading="lazy" width="545" height="666">
-        </figure>
       </div>
     </section>
 
     <section id="about">
-      <div class="container">
+      <div class="container about-grid">
         <div class="section-head about-simple">
           <h2 class="section-title fixed-break"><span class="heading-line">What is</span><span class="heading-line">Mother Vegetable</span></h2>
           <p class="about-subtitle">栄養・浄化・再生の力を持つ<br>35億年前の地球最初の生命</p>
           <p class="section-copy">Mother Vegetableは、35億年前の地球に誕生した最初の生命の力を受け継ぐ存在です。</p>
           <p class="section-copy">育つ過程で二酸化炭素を吸収し、人々に必要な高純度のたんぱく質や医薬品原料をも生み出します。</p>
         </div>
+        <figure class="about-character float-reveal" aria-label="Mother Vegetableのキャラクター">
+          <img src="assets/mv-search-character.png" alt="Mother Vegetableのキャラクター" loading="lazy" width="545" height="666">
+        </figure>
       </div>
     </section>
 
