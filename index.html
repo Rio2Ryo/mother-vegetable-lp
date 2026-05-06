@@ -295,6 +295,7 @@
     .commerce-intro { max-width: 900px; margin: 30px auto 0; text-align:center; }
     .commerce-copy .section-copy { max-width: 760px; margin-left:auto; margin-right:auto; line-height: 2.05; }
     .commerce-copy .copy-line { display:block; }
+    .commerce-copy .copy-spacer { display:block; height:18px; }
     .commerce-copy .search-panel { margin: 34px auto 0; }
     @media (prefers-reduced-motion: no-preference) {
       .float-reveal { opacity:0; transform: translateY(30px) scale(.96); transition: opacity .9s ease, transform .9s cubic-bezier(.18,.84,.31,1); }
@@ -361,6 +362,7 @@
       .commerce-intro { max-width: 720px; }
       .commerce-copy .copy-line { display:inline; }
       .commerce-copy .copy-line::after { content:"\A"; white-space:pre; }
+      .commerce-copy .copy-spacer { height:16px; }
       .mv-force-plus { min-height: 34px; }
       .steps { grid-template-columns: repeat(2, 1fr); }
       .owner-flow .steps { grid-template-columns: 1fr; max-width: 720px; margin-left:auto; margin-right:auto; gap:36px; }
@@ -514,7 +516,7 @@
           <p class="commerce-subtitle">探すこと自体が、楽しくなるECへ</p>
           <div class="commerce-intro">
             <div class="commerce-copy">
-              <p class="section-copy"><span class="copy-line">MVプロダクトは、シャンプーや化粧品のようなカテゴリー、</span><span class="copy-line">はたまた5段階レビューなどで探すものではありません。</span><span class="copy-line">誰のアイデアなのか。どこの地域の素材なのか。</span><span class="copy-line">どんな想いが込められているのか。</span><span class="copy-line">その背景から商品と出会える、</span><span class="copy-line">新しいサーチングシステムです。</span><span class="copy-line">広告やSNSなどで誘導されるのではなく、</span><span class="copy-line">自分の感性で出会うECへ。</span></p>
+              <p class="section-copy"><span class="copy-line">MVプロダクトは、商品カテゴリーや、</span><span class="copy-line">5段階レビューなどで探すものではありません。</span><span class="copy-spacer" aria-hidden="true"></span><span class="copy-line">誰のアイデアか。どこの地域のものか。</span><span class="copy-line">どんな想いが込められているのか。</span><span class="copy-spacer" aria-hidden="true"></span><span class="copy-line">その背景から商品と出会える、</span><span class="copy-line">新しいサーチングシステムです。</span><span class="copy-spacer" aria-hidden="true"></span><span class="copy-line">広告やSNSなどで誘導されるのではなく、</span><span class="copy-line">自分の感性で出会うECへ。</span></p>
               <div class="search-panel" aria-label="MV Product検索導線">
                 <p class="search-prompt">早速検索してみよう</p>
                 <div class="search-options" aria-label="検索方法の選択肢">
