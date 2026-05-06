@@ -231,7 +231,7 @@
     .section-title .heading-line { display: block; white-space: nowrap; }
     .section-title::after { margin: 20px auto 0; background: linear-gradient(90deg, transparent, var(--primary-color), var(--third-color), transparent); }
     .section-copy { color: var(--text-muted); font-size: 16px; max-width: 680px; margin: 20px auto 0; }
-    .panel, .product-card, .search-panel, .compare-card, .quality-card, .step {
+    .panel, .product-card, .search-panel, .quality-card, .step {
       border-radius: var(--radius);
       border: 1px solid var(--primary-color);
       background: var(--background-color);
@@ -265,7 +265,7 @@
     .product-card.confidence .product-actions { justify-content:flex-end; }
     .product-card.confidence .btn { background:#fff; border-color:#fff; color:#001d0c; }
     .product-card.confidence .btn:hover { background:var(--primary-color); border-color:var(--primary-color); color:#000; }
-    .product-card h3, .story-card h3, .quality-card h3, .compare-card h3 { font-family: var(--display); font-size: 30px; line-height:1.18; color:var(--primary-color); }
+    .product-card h3, .story-card h3, .quality-card h3 { font-family: var(--display); font-size: 30px; line-height:1.18; color:var(--primary-color); }
     .product-card h3 { font-size: clamp(38px, 4.2vw, 58px); margin-bottom: 10px; }
     .product-card p, .story-card p, .quality-card p { color:var(--text-muted); }
 
@@ -346,13 +346,6 @@
     .step h3 { font-size:21px; font-family:var(--display); color: var(--secondary-color); line-height:1.32; }
     .step p { color:var(--text-muted); font-size:14px; line-height:1.85; }
 
-    .comparison { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
-    .compare-card { padding:30px; }
-    .compare-card.old { opacity:.72; border-color:rgba(255,255,255,.22); }
-    .compare-card.new { background: linear-gradient(135deg, rgba(37,199,96,.10), rgba(0,0,0,.96)); border-color:var(--primary-color); }
-    .compare-list { list-style:none; padding:0; margin:18px 0 0; display:grid; gap:10px; }
-    .compare-list li { padding:12px 14px; border-radius:10px; background:rgba(37,199,96,.08); color:var(--text-muted); font-weight:700; border:1px solid var(--line-soft); }
-
     .quality-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:36px; }
     .quality-card { padding:30px; }
     .quality-icon { width:54px; height:54px; border-radius:50%; background:radial-gradient(circle, var(--primary-color), var(--third-color)); margin-bottom:20px; border:1px solid rgba(37,199,96,.60); box-shadow:var(--glow); }
@@ -363,9 +356,6 @@
     .vision h2 { font-family: var(--display); font-size: clamp(36px, 5vw, 72px); line-height:1.13; color: var(--primary-color); font-weight:800; max-width:900px; margin:0 auto; text-shadow:var(--glow); }
     .vision p { max-width:720px; margin:22px auto 0; color:var(--text-muted); font-size:18px; }
 
-    .final-cta { padding: 56px; border-radius: var(--radius); background: linear-gradient(135deg, rgba(37,199,96,.12), rgba(60,128,99,.10)); border: 1px solid var(--primary-color); box-shadow: var(--card-shadow); text-align:center; }
-    .final-cta h2 { font-family:var(--display); font-size:clamp(34px, 4.6vw, 64px); line-height:1.1; color:var(--primary-color); text-shadow:var(--glow); }
-    .final-cta p { color:var(--text-muted); max-width:720px; margin:20px auto 28px; font-weight:500; }
     footer { padding: 40px 0 52px; color:var(--text-soft); font-size:13px; background:#000; border-top:1px solid var(--line-soft); }
     .footer-inner { display:flex; justify-content:space-between; gap:20px; padding-top:0; }
     .footer-inner strong { color: var(--primary-color); }
@@ -375,7 +365,7 @@
       .brand-mark { width:52px; height:52px; }
       .nav { display:none; }
       .hero { min-height:auto; padding-top: 86px; padding-bottom: 84px; }
-      .hero-grid, .about-grid, .factory-grid, .comparison { grid-template-columns: 1fr; }
+      .hero-grid, .about-grid, .factory-grid { grid-template-columns: 1fr; }
       .about-simple { margin-left:auto; margin-right:auto; }
       .about-character { min-height:auto; margin-top: 2px; }
       .about-character img { width:min(72vw, 260px); }
@@ -412,7 +402,7 @@
       .about-simple .section-title { font-size: clamp(32px, 10vw, 58px); line-height: 1.08; }
       .products-intro .section-title { font-size: clamp(21px, 6.1vw, 32px); line-height: 1.28; letter-spacing: 0; }
       .about-subtitle { font-size: 19px; }
-      .product-card, .search-panel, .compare-card, .quality-card, .final-cta { padding: 22px; }
+      .product-card, .search-panel, .quality-card { padding: 22px; }
       .search-bar { align-items:flex-start; border-radius:24px; flex-direction:column; padding:18px; }
       .search-bar strong { width:100%; text-align:center; }
       .product-card { min-height:auto; width:100%; padding: 28px; }
@@ -450,9 +440,8 @@
       <a href="#story">Story</a>
       <a href="#factory">Factory</a>
       <a href="#commerce">Commerce</a>
-      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn" href="#contact">Join Project</a>
+    <a class="btn" href="#owner-development">Join Project</a>
   </header>
 
   <main id="top">
@@ -592,20 +581,7 @@
           <div class="step"><div class="step-number">04 / TEAM SALES</div><h3>メンバーと届ける</h3><p>販売メンバーと一緒に広げ、地域と地球を支える商品を世界へ届けます。</p></div>
         </div>
         <p class="owner-support">あなたの夢を応援するため、初回100個の製造費用は私たちがお支払いします。</p>
-        <div class="flow-actions"><a class="btn" href="#contact">商品開発についての詳細はこちら</a></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Why We Do This</div>
-          <h2 class="section-title">怪しいレビューではなく、本当の想いで選ぶ世界へ。</h2>
-        </div>
-        <div class="comparison">
-          <div class="compare-card old"><h3>従来のEC</h3><ul class="compare-list"><li>広告で誘導される</li><li>レビューやランキングに左右される</li><li>誰が作ったかわかりにくい</li><li>価格比較だけで選びがち</li></ul></div>
-          <div class="compare-card new"><h3>Mother Vegetable EC</h3><ul class="compare-list"><li>作り手の想いが見える</li><li>品質と背景を両方伝える</li><li>地域や職業から出会える</li><li>納得と共感で選べる</li></ul></div>
-        </div>
+        <div class="flow-actions"><a class="btn" href="mailto:hello@example.com">商品開発についての詳細はこちら</a></div>
       </div>
     </section>
 
@@ -631,18 +607,6 @@
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="final-cta">
-          <h2>あなたの想いを、商品にしませんか。</h2>
-          <p>自分の商品を作りたい人、地域素材を届けたい人、販売に参加したい人へ。Mother Vegetable E-Commerceが始まります。</p>
-          <div class="hero-actions" style="justify-content:center; margin-top:0">
-            <a class="btn" href="mailto:hello@example.com">商品づくりを相談する</a>
-            <a class="btn secondary" href="#top">もう一度見る</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
