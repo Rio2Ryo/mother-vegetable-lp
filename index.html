@@ -231,6 +231,8 @@
     .section-title { font-family: var(--display); font-size: clamp(30px, 3.8vw, 52px); line-height: 1.18; letter-spacing: .01em; color: var(--primary-color); font-weight: 700; text-shadow: 0 0 18px rgba(37,199,96,.30); }
     .section-title .heading-line { display: block; white-space: nowrap; }
     .section-title .mobile-heading-line { display:inline; white-space:nowrap; }
+    .mobile-break-sp { display:none; }
+    .mobile-break-sp .sp-line { display:block; white-space:nowrap; }
     .section-title::after { margin: 20px auto 0; background: linear-gradient(90deg, transparent, var(--primary-color), var(--third-color), transparent); }
     .section-copy { color: var(--text-muted); font-size: 16px; max-width: 680px; margin: 20px auto 0; }
     .panel, .product-card, .search-panel, .step {
@@ -382,6 +384,10 @@
       .sp-break { display:block; }
       .hero-actions .btn { width:min(100%, 280px); }
       .about-simple .section-title { font-size: clamp(32px, 10vw, 58px); line-height: 1.08; }
+      .mobile-break-pc { display:none; }
+      .mobile-break-sp { display:block; }
+      .vision .mobile-break-sp { margin-left:auto; margin-right:auto; }
+      .owner-flow .mobile-break-sp { margin-left:auto; margin-right:auto; }
       .products-intro .section-title { font-size: clamp(21px, 6.1vw, 32px); line-height: 1.28; letter-spacing: 0; }
       .products-intro .mobile-heading-line { display:block; }
       .about-subtitle { font-size: 19px; }
@@ -512,7 +518,7 @@
       <div class="container">
         <div class="section-head commerce-head">
           <div class="section-kicker">Searching System</div>
-          <h2 class="section-title">商品は、物語から検索しよう</h2>
+          <h2 class="section-title"><span class="mobile-break-pc">商品は、物語から検索しよう</span><span class="mobile-break-sp"><span class="sp-line">商品は</span><span class="sp-line">物語から検索しよう</span></span></h2>
           <p class="commerce-subtitle">探すこと自体が、楽しくなるECへ</p>
           <div class="commerce-intro">
             <div class="commerce-copy">
@@ -542,7 +548,7 @@
         <div class="section-head">
           <div class="section-kicker">Product Owner Program</div>
           <h2 class="section-title fixed-break"><span class="heading-line">あなたも地域と地球を支える</span><span class="heading-line">商品を開発できる</span></h2>
-          <p class="section-copy">あなたの思いを、Mother Vegetableの力で形にしましょう。</p>
+          <p class="section-copy"><span class="mobile-break-pc">あなたの思いを、Mother Vegetableの力で形にしましょう。</span><span class="mobile-break-sp"><span class="sp-line">あなたの想いを</span><span class="sp-line">Mother Vegetableの力で形にしましょう</span></span></p>
           <p class="flow-label">商品化から世界に届くまでのフロー</p>
         </div>
         <div class="steps" aria-label="商品化から世界に届くまでの4ステップ">
@@ -558,8 +564,8 @@
     <section class="vision">
       <div class="container">
         <div class="section-kicker">Vision</div>
-        <h2>選ぶことで全てが始まる</h2>
-        <p>大切な人の健康も、地域を守ることも、Mother Vegetableを選ぶことから全てが始まります。</p>
+        <h2><span class="mobile-break-pc">選ぶことで全てが始まる</span><span class="mobile-break-sp"><span class="sp-line">選ぶことで</span><span class="sp-line">全てが始まる</span></span></h2>
+        <p><span class="mobile-break-pc">大切な人の健康も、地域を守ることも、Mother Vegetableを選ぶことから全てが始まります。</span><span class="mobile-break-sp"><span class="sp-line">大切な人の健康も、地域を守ることも、</span><span class="sp-line">Mother Vegetableを選ぶことから</span><span class="sp-line">全てが始まります。</span></span></p>
         <div class="vision-actions"><a class="btn" href="#story">MV Product 一覧はこちら</a></div>
       </div>
     </section>
