@@ -338,11 +338,20 @@
     .result-card span { display:block; color:var(--text-soft); font-size:12px; margin-top:5px; }
     .search-note { margin: 22px auto 0; color: var(--secondary-color); text-align:center; font-weight:800; line-height:1.8; }
 
-    .steps { display:grid; grid-template-columns: repeat(4, 1fr); gap:32px; }
-    .step { position:relative; padding:26px; min-height:220px; }
-    .step-number { font-family:var(--display); font-size:13px; font-weight:800; color:var(--primary-color); margin-bottom:40px; }
-    .step h3 { font-size:22px; font-family:var(--display); color: var(--secondary-color); line-height:1.25; }
-    .step p { color:var(--text-muted); font-size:14px; }
+    .owner-flow { position:relative; overflow:hidden; }
+    .owner-flow::before { content:""; position:absolute; left:50%; top:18%; width:min(820px, 82vw); height:min(820px, 82vw); transform:translateX(-50%); border-radius:50%; background: radial-gradient(circle, rgba(37,199,96,.13), transparent 68%); pointer-events:none; }
+    .owner-flow .container { position:relative; z-index:1; }
+    .owner-flow .section-head { max-width: 880px; }
+    .owner-flow .section-copy { max-width: 760px; line-height: 2.05; }
+    .flow-label { margin: 30px auto 0; color: var(--secondary-color); font-family: var(--display); font-size: clamp(18px, 2vw, 28px); line-height: 1.45; font-weight: 800; letter-spacing: .01em; }
+    .owner-support { max-width: 780px; margin: 34px auto 0; padding: 20px 24px; border: 1px solid var(--line-color); border-radius: var(--radius); background: rgba(37,199,96,.08); color: var(--secondary-color); font-weight: 800; line-height: 1.8; text-align:center; }
+    .flow-actions { display:flex; justify-content:center; margin-top: 32px; }
+    .steps { display:grid; grid-template-columns: repeat(4, 1fr); gap:22px; align-items:stretch; counter-reset: flow; }
+    .step { position:relative; padding:28px 22px 26px; min-height:230px; background: linear-gradient(180deg, rgba(37,199,96,.07), rgba(0,0,0,.96)); }
+    .step:not(:last-child)::after { content:"→"; position:absolute; top:50%; right:-24px; transform:translate(50%,-50%); z-index:2; color:var(--primary-color); font-family:var(--display); font-size:28px; font-weight:900; text-shadow:var(--glow); }
+    .step-number { display:inline-flex; align-items:center; justify-content:center; min-width:84px; min-height:34px; padding:6px 12px; border:1px solid var(--primary-color); border-radius:999px; background:rgba(37,199,96,.10); font-family:var(--display); font-size:12px; font-weight:800; color:var(--primary-color); margin-bottom:26px; letter-spacing:.08em; }
+    .step h3 { font-size:21px; font-family:var(--display); color: var(--secondary-color); line-height:1.32; }
+    .step p { color:var(--text-muted); font-size:14px; line-height:1.85; }
 
     .comparison { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
     .compare-card { padding:30px; }
@@ -389,6 +398,8 @@
       .magnifier-lens::after { width:38px; height:8px; right:-28px; bottom:4px; }
       .mv-force-plus { min-height: 34px; }
       .steps { grid-template-columns: repeat(2, 1fr); }
+      .owner-flow .steps { grid-template-columns: 1fr; max-width: 720px; margin-left:auto; margin-right:auto; gap:36px; }
+      .owner-flow .step:not(:last-child)::after { content:"↓"; top:auto; bottom:-31px; right:50%; transform:translate(50%,50%); }
     }
     @media (max-width: 640px) {
       .container { width: min(100% - 28px, var(--max)); }
@@ -566,19 +577,22 @@
       </div>
     </section>
 
-    <section>
+    <section id="owner-development" class="owner-flow">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">New Commerce</div>
-          <h2 class="section-title">これからは、あなたがメーカーになる。</h2>
-          <p class="section-copy">ものづくりと販売を、チームで自由に広げていく仕組みです。</p>
+          <div class="section-kicker">Product Owner Program</div>
+          <h2 class="section-title fixed-break"><span class="heading-line">あなたも地域と地球を支える</span><span class="heading-line">商品を開発できる</span></h2>
+          <p class="section-copy">あなたの思いを、Mother Vegetableの力を借りて形にしましょう。</p>
+          <p class="flow-label">商品化から世界に届くまでのフロー</p>
         </div>
-        <div class="steps">
-          <div class="step"><div class="step-number">01 / IDEA</div><h3>想い・アイデアを出す</h3><p>自分の商品、地域素材、届けたい相手から始める。</p></div>
-          <div class="step"><div class="step-number">02 / MATERIAL</div><h3>素材と組み合わせる</h3><p>Mother Vegetableの原材料とアイデアをつなぐ。</p></div>
-          <div class="step"><div class="step-number">03 / PRODUCT</div><h3>商品として形にする</h3><p>品質と物語を持つプロダクトへ育てる。</p></div>
-          <div class="step"><div class="step-number">04 / TEAM SALES</div><h3>メンバーと届ける</h3><p>販売メンバーと一緒に広げる参加型コマース。</p></div>
+        <div class="steps" aria-label="商品化から世界に届くまでの4ステップ">
+          <div class="step"><div class="step-number">01 / IDEA</div><h3>想い・アイデアを出す</h3><p>作りたい商品、地域素材、届けたい相手を描き、商品オーナーとしての夢を言葉にします。</p></div>
+          <div class="step"><div class="step-number">02 / MATERIAL</div><h3>素材と組み合わせる</h3><p>Mother Vegetableの原材料とあなたのアイデアをつなぎ、商品コンセプトを磨きます。</p></div>
+          <div class="step"><div class="step-number">03 / PRODUCT</div><h3>商品として形にする</h3><p>品質と物語を持つプロダクトへ育て、初回製造に進めます。</p></div>
+          <div class="step"><div class="step-number">04 / TEAM SALES</div><h3>メンバーと届ける</h3><p>販売メンバーと一緒に広げ、地域と地球を支える商品を世界へ届けます。</p></div>
         </div>
+        <p class="owner-support">あなたの夢を応援するため、初回100個の製造費用は私たちがお支払いします。</p>
+        <div class="flow-actions"><a class="btn" href="#contact">商品開発についての詳細はこちら</a></div>
       </div>
     </section>
 
