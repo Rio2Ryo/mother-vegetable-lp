@@ -265,7 +265,6 @@
     .product-card.confidence .product-actions { justify-content:flex-end; }
     .product-card.confidence .btn { background:#fff; border-color:#fff; color:#001d0c; }
     .product-card.confidence .btn:hover { background:var(--primary-color); border-color:var(--primary-color); color:#000; }
-    .tag-cloud { display:flex; flex-wrap:wrap; gap:9px; margin-top: 18px; }
     .product-card h3, .story-card h3, .quality-card h3, .compare-card h3 { font-family: var(--display); font-size: 30px; line-height:1.18; color:var(--primary-color); }
     .product-card h3 { font-size: clamp(38px, 4.2vw, 58px); margin-bottom: 10px; }
     .product-card p, .story-card p, .quality-card p { color:var(--text-muted); }
@@ -305,6 +304,7 @@
     .commerce-intro { display:grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); gap: 34px; align-items:center; max-width: 940px; margin: 30px auto 0; text-align:left; }
     .commerce-copy .section-copy { max-width: 640px; margin-left:0; margin-right:0; line-height: 2.05; }
     .commerce-copy .copy-line { display:block; }
+    .commerce-copy .search-panel { margin-top: 30px; }
     .search-character { position:relative; display:flex; justify-content:center; align-items:flex-end; min-height: 250px; margin:0; }
     .search-character::before { content:""; position:absolute; left:50%; bottom:8%; width:min(280px, 82%); height:min(280px, 82%); transform:translateX(-50%); border-radius:50%; background: radial-gradient(circle, rgba(37,199,96,.22), rgba(60,128,99,.09) 48%, transparent 72%); filter: blur(2px); opacity:.78; }
     .search-character img { position:relative; z-index:1; display:block; width:min(100%, 290px); height:auto; object-fit:contain; filter: drop-shadow(0 22px 32px rgba(0,0,0,.54)) drop-shadow(0 0 20px rgba(37,199,96,.18)); }
@@ -329,14 +329,6 @@
     .search-prompt { margin:0 0 18px; color:var(--secondary-color); font-family:var(--display); font-size: clamp(20px, 2.4vw, 32px); line-height:1.45; font-weight:800; text-align:center; }
     .search-bar { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:66px; padding:0 18px 0 22px; border:1px solid var(--primary-color); border-radius:999px; background: rgba(37,199,96,.06); color:var(--text-muted); font-weight:700; }
     .search-bar strong { color: #000; background:var(--primary-color); border-radius:999px; padding:12px 20px; box-shadow:var(--glow); }
-    .search-guide { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:18px; }
-    .search-guide-card { padding:16px; border:1px solid var(--line-soft); border-radius:16px; background:#040704; color:var(--text-muted); font-size:14px; line-height:1.7; }
-    .search-guide-card strong { display:block; color:var(--primary-color); font-family:var(--display); font-size:16px; margin-bottom:6px; }
-    .search-results { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:18px; }
-    .result-card { padding:18px; min-height:170px; border:1px solid var(--line-soft); border-radius:var(--radius); background: #040704; }
-    .result-art { height:70px; border-radius:10px; margin-bottom:12px; background: radial-gradient(circle at 30% 40%, rgba(37,199,96,.35), transparent 42%), linear-gradient(135deg, rgba(60,128,99,.28), #000); }
-    .result-card strong { display:block; line-height:1.35; color:var(--secondary-color); }
-    .result-card span { display:block; color:var(--text-soft); font-size:12px; margin-top:5px; }
     .search-note { margin: 22px auto 0; color: var(--secondary-color); text-align:center; font-weight:800; line-height:1.8; }
 
     .owner-flow { position:relative; overflow:hidden; }
@@ -390,7 +382,7 @@
       .factory-grid > div:first-child { text-align:center; }
       .factory-grid .section-title::after, .factory-grid .section-copy { margin-left:auto; }
       .products, .quality-grid { grid-template-columns:1fr; }
-      .mv-force-grid, .story-grid, .search-guide, .search-results { grid-template-columns:1fr; }
+      .mv-force-grid, .story-grid { grid-template-columns:1fr; }
       .commerce-intro { grid-template-columns:1fr; gap: 24px; max-width: 720px; text-align:center; }
       .commerce-copy .section-copy { margin-left:auto; margin-right:auto; }
       .commerce-copy .copy-line { display:inline; }
@@ -570,6 +562,11 @@
           <div class="commerce-intro">
             <div class="commerce-copy">
               <p class="section-copy"><span class="copy-line">MVプロダクトは、シャンプーや化粧品のようなカテゴリー、</span><span class="copy-line">はたまた5段階レビューなどで探すものではありません。</span><span class="copy-line">誰のアイデアなのか。どこの地域の素材なのか。</span><span class="copy-line">どんな想いが込められているのか。</span><span class="copy-line">その背景から商品と出会える、</span><span class="copy-line">新しいサーチングシステムです。</span><span class="copy-line">広告やSNSなどで誘導されるのではなく、</span><span class="copy-line">自分の感性で出会うECへ。</span></p>
+              <div class="search-panel" aria-label="MV Product検索導線">
+                <p class="search-prompt">早速検索してみよう</p>
+                <div class="search-bar"><span>気になるMV Productを探す</span><strong>Search</strong></div>
+                <p class="search-note">探すこと自体が楽しくなる、Mother Vegetableの検索体験です。</p>
+              </div>
             </div>
             <figure class="search-character float-reveal with-magnifier" aria-label="Mother Vegetableのキャラクターを虫眼鏡で見つけるイメージ">
               <img src="assets/mv-search-character.png" alt="Mother Vegetableのキャラクター" loading="lazy" width="545" height="666">
