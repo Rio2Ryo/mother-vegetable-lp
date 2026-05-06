@@ -232,16 +232,9 @@
       transition: all .3s ease;
     }
 
-    .what-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: stretch; }
-    .text-panel { padding: 40px; }
-    .text-panel p { color: var(--text-muted); margin: 0; font-size: 16px; }
-    .cycle { padding: 30px; background: linear-gradient(135deg, rgba(37,199,96,.08), rgba(0,0,0,.92)); display:grid; gap:14px; }
-    .cycle-row { display:grid; grid-template-columns: 76px 1fr; align-items:center; gap:16px; }
-    .cycle-badge { width:76px; height:76px; display:grid; place-items:center; border-radius:50%; border: 1px solid var(--primary-color); background: rgba(37,199,96,.10); font-family: var(--display); font-weight: 800; color: var(--primary-color); box-shadow: 0 0 18px rgba(37,199,96,.16); }
-    .cycle-row:not(:last-child) .cycle-badge { position:relative; }
-    .cycle-row:not(:last-child) .cycle-badge::after { content:""; position:absolute; left:50%; bottom:-22px; width:1px; height:22px; background: var(--primary-color); opacity:.45; }
-    .cycle-text strong { display:block; font-size:18px; color:var(--secondary-color); }
-    .cycle-text span { color: var(--text-soft); font-size: 13px; }
+    .about-simple { max-width: 840px; margin: 0 auto; text-align: center; }
+    .about-simple .section-copy { max-width: 760px; line-height: 2.05; }
+    .about-simple .section-copy + .section-copy { margin-top: 14px; }
 
     .products { display:grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
     .product-card { position:relative; min-height: 470px; padding: 36px; overflow:hidden; }
@@ -325,7 +318,7 @@
       .brand-mark { width:52px; height:52px; }
       .nav { display:none; }
       .hero { min-height:auto; padding-top: 66px; }
-      .hero-grid, .what-grid, .story-product-grid, .factory-grid, .comparison { grid-template-columns: 1fr; }
+      .hero-grid, .story-product-grid, .factory-grid, .comparison { grid-template-columns: 1fr; }
       .factory-grid > div:first-child { text-align:center; }
       .factory-grid .section-title::after, .factory-grid .section-copy { margin-left:auto; }
       .products, .quality-grid { grid-template-columns:1fr; }
@@ -343,7 +336,7 @@
       h1::after { width: 88%; }
       .hero .lead { font-size: 15px; line-height:1.9; }
       .hero-actions .btn { width:100%; }
-      .text-panel, .cycle, .product-card, .search-panel, .compare-card, .quality-card, .final-cta { padding: 22px; }
+      .product-card, .search-panel, .compare-card, .quality-card, .final-cta { padding: 22px; }
       .product-card { min-height:auto; }
       .dark-room, .vision { padding: 64px 0; }
       .factory-map { min-height: 480px; }
@@ -390,21 +383,11 @@
 
     <section id="about">
       <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">What’s Mother Vegetable</div>
-          <h2 class="section-title">地球をつくった力を、現代の商品へ。</h2>
-          <p class="section-copy">Mother Vegetableは、自然の力と最新技術から生まれた、食品・美容・日用品へ広がる基盤素材です。</p>
-        </div>
-        <div class="what-grid">
-          <div class="panel text-panel">
-            <p>CO₂を素材へ変える技術と、作り手の想いをつなぎ、地球と人にやさしい商品へ育てます。</p>
-          </div>
-          <div class="panel cycle" aria-label="循環図">
-            <div class="cycle-row"><div class="cycle-badge">CO₂</div><div class="cycle-text"><strong>空気中のCO₂</strong><span>地球再生へ向かう入口</span></div></div>
-            <div class="cycle-row"><div class="cycle-badge">Life</div><div class="cycle-text"><strong>地球最古の生命由来の原材料</strong><span>酸素と緑をもたらした生命力</span></div></div>
-            <div class="cycle-row"><div class="cycle-badge">Care</div><div class="cycle-text"><strong>栄養・ケア素材</strong><span>食品、美容、日用品のベースへ</span></div></div>
-            <div class="cycle-row"><div class="cycle-badge">Story</div><div class="cycle-text"><strong>想いのあるプロダクト</strong><span>品質と物語を持つオンリーワンの商品</span></div></div>
-          </div>
+        <div class="section-head about-simple">
+          <div class="section-kicker">What is &quot;Mother Vegetable&quot;</div>
+          <h2 class="section-title">栄養・浄化・再生の力を持つ<br>35億年前の地球最初の生命</h2>
+          <p class="section-copy">Mother Vegetableは、35億年前の地球に誕生した最初の生命の力を受け継ぐ存在です。</p>
+          <p class="section-copy">育つ過程で二酸化炭素を吸収し、人々に必要な高純度のたんぱく質や医薬品原料をも生み出します。</p>
         </div>
       </div>
     </section>
