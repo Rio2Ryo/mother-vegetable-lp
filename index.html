@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mother Vegetable Project | 地球原材料から生まれる、これからの商品づくり。</title>
+  <meta name="description" content="地球最古の生命力と人の想いから生まれる、Mother VegetableプロジェクトのLPトップページ静的デザインモック。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #faf7ee;
+      --paper: #fffdf7;
+      --paper-2: #f4efe2;
+      --ink: #123d2e;
+      --ink-soft: #506b5f;
+      --muted: #827b6d;
+      --green: #0f4a35;
+      --green-2: #078a52;
+      --green-3: #bfead8;
+      --mint: #ddf7ec;
+      --blue: #5ab9c8;
+      --blue-soft: #d7f4f4;
+      --gold: #d8c26a;
+      --lime: #b9d866;
+      --oat: #d9d0be;
+      --oat-soft: #ebe3d3;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(15, 74, 53, .12), 0 2px 0 rgba(255,255,255,.8) inset;
+      --shadow-card: 0 16px 45px rgba(18, 61, 46, .10), 0 1px 1px rgba(18, 61, 46, .07);
+      --radius-lg: 40px;
+      --radius-md: 26px;
+      --radius-sm: 16px;
+      --max: 1180px;
+      --sans: 'Noto Sans JP', 'DM Sans', system-ui, sans-serif;
+      --display: 'Shippori Mincho B1', 'Noto Sans JP', serif;
+      --latin: 'DM Sans', 'Noto Sans JP', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 9% 8%, rgba(191, 234, 216, .72), transparent 27rem),
+        radial-gradient(circle at 90% 2%, rgba(215, 244, 244, .78), transparent 24rem),
+        linear-gradient(180deg, var(--cream) 0%, #fffdf7 34%, var(--cream) 100%);
+      font-family: var(--sans);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .45;
+      background-image:
+        radial-gradient(circle, rgba(15,74,53,.10) 1px, transparent 1.5px),
+        linear-gradient(rgba(15,74,53,.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,74,53,.026) 1px, transparent 1px);
+      background-size: 36px 36px, 72px 72px, 72px 72px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 86%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      width: min(1240px, calc(100% - 28px));
+      margin: 14px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 14px 12px 18px;
+      border: 1px solid rgba(217, 208, 190, .9);
+      border-radius: 999px;
+      background: rgba(255,253,247,.78);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 55px rgba(18,61,46,.09);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-family: var(--latin); font-weight: 700; letter-spacing: -.03em; }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(from 210deg, var(--green), var(--green-2), var(--blue), var(--lime), var(--green));
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,.82), 0 10px 22px rgba(15,74,53,.18);
+    }
+    .brand-mark::after { content:""; width: 9px; height: 18px; border: 2px solid rgba(255,255,255,.88); border-left: 0; border-bottom: 0; border-radius: 50% 50% 0 50%; transform: rotate(-35deg); }
+    .nav { display: flex; align-items: center; gap: 18px; color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+    .nav a { padding: 9px 0; }
+    .nav a:hover { color: var(--green); }
+
+    .btn {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--green);
+      background: var(--green);
+      color: #fffdf7;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      box-shadow: 0 14px 26px rgba(15,74,53,.18);
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-3px) rotate(-1deg); box-shadow: -7px 9px 0 rgba(15,74,53,.18), 0 18px 32px rgba(15,74,53,.16); }
+    .btn.secondary { background: rgba(255,253,247,.76); color: var(--green); border-color: var(--oat); box-shadow: none; }
+    .btn.gold { background: var(--gold); border-color: #bfa850; color: #233b20; }
+    .topbar .btn { min-height: 40px; padding: 9px 14px; font-size: 13px; }
+
+    .hero {
+      position: relative;
+      padding: 94px 0 78px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(440px, .98fr);
+      gap: 54px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px dashed rgba(15,74,53,.28);
+      color: var(--green);
+      background: rgba(255,253,247,.62);
+      font-family: var(--latin);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-2); box-shadow: 0 0 0 7px rgba(7,138,82,.13); }
+    h1, h2, h3 { margin: 0; text-wrap: pretty; }
+    h1 {
+      margin-top: 22px;
+      font-family: var(--display);
+      font-size: clamp(46px, 6.3vw, 82px);
+      line-height: 1.06;
+      letter-spacing: -.07em;
+      color: var(--ink);
+    }
+    .hero .lead {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--ink-soft);
+      font-size: clamp(16px, 1.5vw, 20px);
+      line-height: 2;
+      font-weight: 500;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(217,208,190,.9);
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      color: var(--ink-soft);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .orb-stage {
+      position: relative;
+      min-height: 610px;
+      border: 1px solid rgba(217,208,190,.95);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 60% 42%, rgba(255,255,255,.95) 0 7%, transparent 8%),
+        radial-gradient(circle at 50% 45%, rgba(191,234,216,.98) 0 20%, rgba(215,244,244,.82) 33%, rgba(250,247,238,.10) 55%, transparent 62%),
+        linear-gradient(140deg, rgba(255,255,255,.74), rgba(221,247,236,.50));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .orb-stage::before {
+      content: "";
+      position: absolute;
+      inset: 66px;
+      border-radius: 50%;
+      border: 1px solid rgba(15,74,53,.20);
+      background:
+        radial-gradient(circle at 36% 30%, rgba(255,255,255,.75) 0 7%, transparent 8%),
+        radial-gradient(circle at 65% 68%, rgba(7,138,82,.45) 0 4%, transparent 5%),
+        repeating-radial-gradient(circle at 50% 50%, rgba(15,74,53,.10) 0 1px, transparent 1px 18px),
+        conic-gradient(from 120deg, rgba(7,138,82,.72), rgba(90,185,200,.62), rgba(216,194,106,.55), rgba(7,138,82,.7));
+      filter: saturate(1.05);
+      animation: breathe 8s ease-in-out infinite;
+    }
+    .orb-stage::after {
+      content: "";
+      position: absolute;
+      inset: 42px;
+      border-radius: 50%;
+      border: 1px dashed rgba(15,74,53,.28);
+      animation: slowspin 26s linear infinite;
+    }
+    .orbit-line { position:absolute; width: 76%; height: 38%; left: 12%; top: 30%; border: 1px solid rgba(18,61,46,.22); border-radius: 50%; transform: rotate(-18deg); }
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      width: 178px;
+      padding: 16px;
+      border-radius: 24px;
+      border: 1px solid var(--oat);
+      background: rgba(255,253,247,.82);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-card);
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .floating-card small { display:block; color: var(--muted); font-family: var(--latin); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; margin-bottom: 5px; }
+    .floating-card.one { top: 58px; left: 38px; }
+    .floating-card.two { right: 34px; top: 172px; }
+    .floating-card.three { left: 70px; bottom: 72px; }
+    .floating-card.four { right: 58px; bottom: 54px; }
+    .molecule { position: absolute; z-index: 2; width: 7px; height: 7px; border-radius: 50%; background: var(--green-2); opacity: .65; box-shadow: 0 0 0 8px rgba(7,138,82,.10); }
+    .m1{left:22%;top:24%}.m2{left:70%;top:18%;background:var(--blue)}.m3{left:78%;top:66%;background:var(--gold)}.m4{left:32%;top:78%;background:var(--lime)}.m5{left:53%;top:12%}
+
+    @keyframes breathe { 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.035); } }
+    @keyframes slowspin { to { transform: rotate(360deg); } }
+
+    section { padding: 80px 0; }
+    .section-head { max-width: 820px; margin-bottom: 34px; }
+    .section-kicker { color: var(--green-2); font-family: var(--latin); text-transform: uppercase; letter-spacing: .10em; font-weight: 800; font-size: 12px; margin-bottom: 11px; }
+    .section-title { font-family: var(--display); font-size: clamp(31px, 4.1vw, 56px); line-height: 1.15; letter-spacing: -.055em; }
+    .section-copy { color: var(--ink-soft); font-size: 17px; max-width: 720px; margin: 16px 0 0; }
+    .panel {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--oat);
+      background: rgba(255,253,247,.78);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .what-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 28px; align-items: stretch; }
+    .text-panel { padding: 38px; }
+    .text-panel p { color: var(--ink-soft); margin: 0; font-size: 16px; }
+    .cycle { padding: 30px; background: linear-gradient(135deg, rgba(221,247,236,.84), rgba(255,253,247,.95)); display:grid; gap:14px; }
+    .cycle-row { display:grid; grid-template-columns: 76px 1fr; align-items:center; gap:16px; }
+    .cycle-badge { width:76px; height:76px; display:grid; place-items:center; border-radius:50%; border: 1px solid rgba(15,74,53,.22); background: rgba(255,255,255,.76); font-family: var(--latin); font-weight: 800; color: var(--green); }
+    .cycle-row:not(:last-child) .cycle-badge { position:relative; }
+    .cycle-row:not(:last-child) .cycle-badge::after { content:""; position:absolute; left:50%; bottom:-22px; width:1px; height:22px; background: rgba(15,74,53,.28); }
+    .cycle-text strong { display:block; font-size:18px; }
+    .cycle-text span { color: var(--ink-soft); font-size: 13px; }
+
+    .products { display:grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .product-card { position:relative; min-height: 470px; padding: 34px; border-radius: var(--radius-lg); border:1px solid var(--oat); background: var(--paper); box-shadow: var(--shadow-card); overflow:hidden; }
+    .product-card::before { content:""; position:absolute; width:270px; height:270px; right:-60px; top:-40px; border-radius:50%; background: radial-gradient(circle, var(--green-3), transparent 70%); opacity:.8; }
+    .product-card.confidence::before { background: radial-gradient(circle, var(--blue-soft), transparent 70%); }
+    .product-visual { position:relative; height: 210px; margin: 10px 0 24px; }
+    .powder-bowl { position:absolute; left:50%; top:54%; width:190px; height:72px; transform:translate(-50%,-50%); border-radius:50%; background: radial-gradient(ellipse at center, #4ea96d 0 24%, #eaffef 25% 44%, #fff 45% 70%, #ddd2bd 71%); box-shadow: 0 26px 55px rgba(15,74,53,.14); }
+    .bottle { position:absolute; left:50%; top:47%; width:92px; height:184px; transform:translate(-50%,-50%); border-radius: 34px 34px 22px 22px; border: 2px solid rgba(90,185,200,.35); background: linear-gradient(90deg, rgba(255,255,255,.65), rgba(215,244,244,.72), rgba(255,255,255,.45)); box-shadow: 0 26px 55px rgba(90,185,200,.18); }
+    .bottle::before { content:""; position:absolute; left:27px; top:-27px; width:38px; height:34px; border-radius: 10px 10px 6px 6px; background:#fff; border: 1px solid rgba(90,185,200,.35); }
+    .tag-cloud { display:flex; flex-wrap:wrap; gap:9px; margin-top: 18px; }
+    .tag { padding: 7px 10px; border-radius:999px; background: rgba(255,255,255,.75); border:1px solid var(--oat-soft); color: var(--ink-soft); font-weight:700; font-size:12px; }
+    .product-card h3, .story-card h3, .quality-card h3 { font-family: var(--display); font-size: 31px; line-height:1.18; letter-spacing:-.04em; }
+    .product-card p, .story-card p, .quality-card p { color:var(--ink-soft); }
+
+    .dark-room { background: var(--green); color: var(--paper); border-radius: 54px; padding: 76px 0; margin: 40px auto; width:min(1280px, calc(100% - 28px)); position:relative; overflow:hidden; }
+    .dark-room::before { content:""; position:absolute; inset:-20%; background: radial-gradient(circle at 15% 20%, rgba(191,234,216,.24), transparent 30%), radial-gradient(circle at 82% 72%, rgba(216,194,106,.22), transparent 34%); }
+    .dark-room .container { position:relative; }
+    .dark-room .section-kicker { color: var(--green-3); }
+    .dark-room .section-copy { color: rgba(255,253,247,.76); }
+    .story-product-grid { display:grid; grid-template-columns: .82fr 1.18fr; gap: 28px; align-items: center; }
+    .product-story-card { padding: 26px; border: 1px solid rgba(255,255,255,.20); border-radius: 30px; background: rgba(255,255,255,.10); backdrop-filter: blur(12px); }
+    .mock-product { height: 170px; border-radius: 26px; background: linear-gradient(135deg, rgba(255,253,247,.98), rgba(191,234,216,.92)); margin-bottom: 18px; position:relative; overflow:hidden; }
+    .mock-product::before { content:""; position:absolute; left:34px; bottom:28px; width:80px; height:105px; border-radius: 24px 24px 16px 16px; background: var(--paper); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .mock-product::after { content:"Mother\A Vegetable"; white-space:pre; position:absolute; left:128px; top:48px; color: var(--green); font-family: var(--latin); font-weight:800; line-height:1.05; }
+    .profile-line { display:flex; gap:10px; align-items:center; color:rgba(255,253,247,.86); font-size:13px; }
+    .avatar { width:38px; height:38px; border-radius:50%; background: linear-gradient(135deg, var(--gold), var(--green-3)); }
+    .story-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .story-card { padding:24px; border-radius:26px; background: rgba(255,253,247,.98); color: var(--ink); min-height: 260px; }
+    .story-card .role { color: var(--green-2); font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+
+    .factory-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items:center; }
+    .factory-map { position:relative; min-height: 520px; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(221,247,236,.65), rgba(255,253,247,.9)); border:1px solid var(--oat); overflow:hidden; box-shadow: var(--shadow-card); }
+    .factory-center { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:210px; height:210px; display:grid; place-items:center; text-align:center; border-radius:50%; background: var(--green); color:var(--paper); box-shadow:0 28px 70px rgba(15,74,53,.22); font-family:var(--display); font-size:28px; line-height:1.2; letter-spacing:-.04em; z-index:2; }
+    .node { position:absolute; min-width:118px; padding:13px 15px; border-radius:999px; border:1px solid var(--oat); background: rgba(255,253,247,.86); font-weight:800; color: var(--ink); box-shadow: 0 10px 25px rgba(15,74,53,.08); }
+    .node.n1{left:36px;top:60px}.node.n2{right:36px;top:84px}.node.n3{left:48px;bottom:92px}.node.n4{right:28px;bottom:78px}.node.n5{left:50%;top:24px;transform:translateX(-50%)}.node.n6{left:50%;bottom:28px;transform:translateX(-50%)}
+    .factory-map svg { position:absolute; inset:0; width:100%; height:100%; opacity:.42; }
+
+    .search-panel { padding: 28px; border-radius: var(--radius-lg); background: var(--paper); border:1px solid var(--oat); box-shadow: var(--shadow-card); }
+    .search-bar { display:flex; align-items:center; justify-content:space-between; min-height:64px; padding:0 18px 0 22px; border:1px solid var(--oat); border-radius:999px; background: #fff; color:var(--muted); font-weight:700; }
+    .search-results { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:18px; }
+    .result-card { padding:18px; min-height:170px; border:1px solid var(--oat-soft); border-radius:24px; background: linear-gradient(180deg,#fff, #fbf7ed); }
+    .result-art { height:70px; border-radius:18px; margin-bottom:12px; background: radial-gradient(circle at 30% 40%, var(--green-3), transparent 42%), linear-gradient(135deg, var(--blue-soft), #fff); }
+    .result-card strong { display:block; line-height:1.35; }
+    .result-card span { display:block; color:var(--muted); font-size:12px; margin-top:5px; }
+
+    .steps { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; }
+    .step { position:relative; padding:26px; min-height:220px; border-radius:30px; background: rgba(255,253,247,.82); border:1px solid var(--oat); box-shadow: var(--shadow-card); }
+    .step-number { font-family:var(--latin); font-size:13px; font-weight:800; color:var(--green-2); margin-bottom:40px; }
+    .step h3 { font-size:22px; font-family:var(--display); letter-spacing:-.04em; line-height:1.25; }
+    .step p { color:var(--ink-soft); font-size:14px; }
+
+    .comparison { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .compare-card { padding:30px; border-radius:34px; border:1px solid var(--oat); background:rgba(255,253,247,.86); box-shadow:var(--shadow-card); }
+    .compare-card.old { filter:saturate(.65); opacity:.86; }
+    .compare-card.new { background: linear-gradient(135deg, rgba(221,247,236,.82), rgba(255,253,247,.96)); border-color:rgba(7,138,82,.32); }
+    .compare-list { list-style:none; padding:0; margin:18px 0 0; display:grid; gap:10px; }
+    .compare-list li { padding:12px 14px; border-radius:16px; background:rgba(255,255,255,.70); color:var(--ink-soft); font-weight:700; }
+
+    .quality-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    .quality-card { padding:30px; border-radius:32px; border:1px solid var(--oat); background:var(--paper); box-shadow:var(--shadow-card); }
+    .quality-icon { width:54px; height:54px; border-radius:18px; background:linear-gradient(135deg, var(--green-3), var(--blue-soft)); margin-bottom:20px; border:1px solid rgba(15,74,53,.14); }
+
+    .vision { position:relative; text-align:center; padding:110px 0; border-radius:54px; margin:40px auto; width:min(1280px, calc(100% - 28px)); overflow:hidden; color:var(--paper); background: radial-gradient(circle at 50% 30%, rgba(90,185,200,.55), transparent 34%), linear-gradient(135deg, #0b3024, #0f4a35 48%, #173d43); }
+    .vision::before { content:""; position:absolute; left:50%; top:55%; width:720px; height:720px; transform:translate(-50%,-50%); border-radius:50%; border:1px solid rgba(255,255,255,.22); background: repeating-radial-gradient(circle, rgba(255,255,255,.09) 0 1px, transparent 1px 34px); opacity:.72; }
+    .vision .container { position:relative; z-index:2; }
+    .vision h2 { font-family: var(--display); font-size: clamp(38px, 5.4vw, 76px); line-height:1.13; letter-spacing:-.06em; max-width:900px; margin:0 auto; }
+    .vision p { max-width:720px; margin:22px auto 0; color:rgba(255,253,247,.78); font-size:18px; }
+
+    .final-cta { padding: 54px; border-radius: 52px; background: linear-gradient(135deg, var(--gold), var(--green-3) 45%, var(--blue-soft)); border: 1px solid rgba(15,74,53,.18); box-shadow: var(--shadow); text-align:center; }
+    .final-cta h2 { font-family:var(--display); font-size:clamp(36px, 5vw, 68px); line-height:1.1; letter-spacing:-.06em; }
+    .final-cta p { color:var(--ink-soft); max-width:720px; margin:20px auto 28px; font-weight:600; }
+    footer { padding: 36px 0 52px; color:var(--muted); font-size:13px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; border-top:1px solid var(--oat); padding-top:24px; }
+
+    @media (max-width: 980px) {
+      .nav { display:none; }
+      .hero { padding-top: 58px; }
+      .hero-grid, .what-grid, .story-product-grid, .factory-grid, .comparison { grid-template-columns: 1fr; }
+      .orb-stage { min-height: 520px; }
+      .products, .quality-grid { grid-template-columns:1fr; }
+      .story-grid, .search-results { grid-template-columns:1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .topbar { top: 8px; border-radius: 24px; align-items:flex-start; }
+      .brand span { max-width:120px; line-height:1.1; }
+      .topbar .btn { display:none; }
+      section { padding: 56px 0; }
+      h1 { font-size: clamp(41px, 13vw, 56px); }
+      .hero .lead { font-size: 15px; line-height:1.9; }
+      .hero-actions .btn { width:100%; }
+      .orb-stage { min-height: 500px; border-radius: 34px; }
+      .orb-stage::before { inset: 90px 40px; }
+      .floating-card { width: 145px; padding: 13px; font-size: 13px; }
+      .floating-card.one { top:32px; left:18px; }
+      .floating-card.two { right:14px; top:116px; }
+      .floating-card.three { left:20px; bottom:80px; }
+      .floating-card.four { right:18px; bottom:34px; }
+      .text-panel, .cycle, .product-card, .search-panel, .compare-card, .quality-card, .final-cta { padding: 22px; }
+      .product-card { min-height:auto; }
+      .dark-room, .vision { width: calc(100% - 14px); border-radius: 34px; padding: 58px 0; }
+      .story-grid { gap:12px; }
+      .factory-map { min-height: 480px; }
+      .factory-center { width:165px; height:165px; font-size:23px; }
+      .node { min-width:auto; font-size:12px; padding:10px 12px; }
+      .steps { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="サイトヘッダー">
+    <a class="brand" href="#top" aria-label="Mother Vegetableトップへ"><span class="brand-mark"></span><span>Mother Vegetable</span></a>
+    <nav class="nav" aria-label="主要ナビゲーション">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#story">Story</a>
+      <a href="#factory">Factory</a>
+      <a href="#commerce">Commerce</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Join Project</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span>Mother Vegetable Project</span>
+          <h1>地球原材料から生まれる、<br>これからの商品づくり。</h1>
+          <p class="lead">35億年前、地球に最初の酸素と緑をもたらした生命。その力を、食べるもの、洗うもの、整えるものへ。Mother Vegetableは、地球の力と人の想いから生まれる、新しいプロダクトづくりの始まりです。</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">プロジェクトに参加する</a>
+            <a class="btn secondary" href="#about">Mother Vegetableとは</a>
+          </div>
+          <div class="hero-meta" aria-label="プロジェクトの特徴">
+            <span class="chip">CO₂ → 原材料</span>
+            <span class="chip">食品・美容・日用品へ展開</span>
+            <span class="chip">ストーリーEC</span>
+            <span class="chip">参加型コマース</span>
+          </div>
+        </div>
+        <div class="orb-stage" aria-label="地球・素材・商品・人の想いが循環する抽象ビジュアル">
+          <div class="orbit-line"></div>
+          <span class="molecule m1"></span><span class="molecule m2"></span><span class="molecule m3"></span><span class="molecule m4"></span><span class="molecule m5"></span>
+          <div class="floating-card one"><small>Origin</small>地球最古の生命力</div>
+          <div class="floating-card two"><small>Material</small>CO₂を素材へ</div>
+          <div class="floating-card three"><small>Product</small>食べる・洗う・整える</div>
+          <div class="floating-card four"><small>Story</small>人の想いが価値になる</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">What’s Mother Vegetable</div>
+          <h2 class="section-title">地球をつくった力を、現代の商品へ。</h2>
+          <p class="section-copy">Mother Vegetableは、地球最古の生命に由来する原材料。自然の力と最新技術を、食品・美容・日用品へ展開するための基盤素材です。</p>
+        </div>
+        <div class="what-grid">
+          <div class="panel text-panel">
+            <p>CO₂を吸収し、栄養と素材へ変える最新技術から生まれるMother Vegetable。便利な商品ではなく、地球と人を良くする商品へ。原材料そのものの価値と、そこに込められる作り手の想いをつなぎます。</p>
+          </div>
+          <div class="panel cycle" aria-label="循環図">
+            <div class="cycle-row"><div class="cycle-badge">CO₂</div><div class="cycle-text"><strong>空気中のCO₂</strong><span>地球再生へ向かう入口</span></div></div>
+            <div class="cycle-row"><div class="cycle-badge">Life</div><div class="cycle-text"><strong>地球最古の生命由来の原材料</strong><span>酸素と緑をもたらした生命力</span></div></div>
+            <div class="cycle-row"><div class="cycle-badge">Care</div><div class="cycle-text"><strong>栄養・ケア素材</strong><span>食品、美容、日用品のベースへ</span></div></div>
+            <div class="cycle-row"><div class="cycle-badge">Story</div><div class="cycle-text"><strong>想いのあるプロダクト</strong><span>品質と物語を持つオンリーワンの商品</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Achieve / Confidence</div>
+          <h2 class="section-title">内側から支える栄養と、外側から守るケア。</h2>
+          <p class="section-copy">Mother Vegetableの原材料は、毎日の食事にも、肌・髪・ペット・日用品にも広がります。</p>
+        </div>
+        <div class="products">
+          <article class="product-card">
+            <h3>Achieve</h3>
+            <p>地球最古の栄養を、毎日の力に。たんぱく質、ミネラル、ビタミン、フィコシアニンなどを含む高栄養パウダーです。</p>
+            <div class="product-visual"><div class="powder-bowl"></div></div>
+            <div class="tag-cloud"><span class="tag">たんぱく質</span><span class="tag">ミネラル</span><span class="tag">ビタミン</span><span class="tag">フィコシアニン</span><span class="tag">飲料</span><span class="tag">ペット</span><span class="tag">スポーツ栄養</span></div>
+          </article>
+          <article class="product-card confidence">
+            <h3>Confidence</h3>
+            <p>人と動物をやさしく守る、自然由来のケア素材。化粧品、シャンプー、ハンドソープなどのベース素材として活用できます。</p>
+            <div class="product-visual"><div class="bottle"></div></div>
+            <div class="tag-cloud"><span class="tag">スキンケア</span><span class="tag">ヘアケア</span><span class="tag">ペットケア</span><span class="tag">ハンドソープ</span><span class="tag">シャンプー</span><span class="tag">日用品</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="dark-room">
+      <div class="container">
+        <div class="story-product-grid">
+          <div>
+            <div class="section-kicker">Mother Vegetable Product</div>
+            <h2 class="section-title">生まれるのは、商品ではなく“想いのあるプロダクト”。</h2>
+            <p class="section-copy">すべての商品には、Mother Vegetableの原材料と、発案者の想い、地域の物語、届けたい相手が込められます。</p>
+          </div>
+          <div class="product-story-card">
+            <div class="mock-product"></div>
+            <div class="profile-line"><span class="avatar"></span><span>発案者 / 地域 / 届けたい相手が見えるプロダクトカード</span></div>
+          </div>
+        </div>
+
+        <div style="height:52px"></div>
+        <div class="section-head">
+          <div class="section-kicker">Product Story</div>
+          <h2 class="section-title">商品は、広告ではなく物語で選ばれる。</h2>
+        </div>
+        <div class="story-grid">
+          <article class="story-card"><div class="role">Student</div><h3>小中学生の未来の栄養商品</h3><p>子どもたちが願う未来から、毎日の食を支える商品が生まれる。</p></article>
+          <article class="story-card"><div class="role">Farmer</div><h3>地域素材を活かした商品</h3><p>農家や地域の素材が、Mother Vegetableと出会い新しい価値になる。</p></article>
+          <article class="story-card"><div class="role">Athlete</div><h3>身体づくりを支える商品</h3><p>アスリートの日常と、地球最古の生命力をつなぐプロダクト。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="factory">
+      <div class="container factory-grid">
+        <div>
+          <div class="section-kicker">Mother Vegetable Factory</div>
+          <h2 class="section-title">人々の想いがミックスされる場所。</h2>
+          <p class="section-copy">Factoryは、原材料とアイデアが出会う共創ラボ。地域の素材、世界中の発案者、販売メンバーの力が集まり、地球と人の未来を形にします。</p>
+        </div>
+        <div class="factory-map" aria-label="Factoryに要素が集まる図">
+          <svg aria-hidden="true"><line x1="50%" y1="50%" x2="18%" y2="18%" stroke="#0f4a35"/><line x1="50%" y1="50%" x2="82%" y2="22%" stroke="#0f4a35"/><line x1="50%" y1="50%" x2="20%" y2="82%" stroke="#0f4a35"/><line x1="50%" y1="50%" x2="82%" y2="82%" stroke="#0f4a35"/><line x1="50%" y1="50%" x2="50%" y2="9%" stroke="#0f4a35"/><line x1="50%" y1="50%" x2="50%" y2="91%" stroke="#0f4a35"/></svg>
+          <div class="factory-center">Mother<br>Vegetable<br>Factory</div>
+          <div class="node n1">地域素材</div><div class="node n2">発案者</div><div class="node n3">原材料</div><div class="node n4">販売メンバー</div><div class="node n5">商品開発</div><div class="node n6">地球循環</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commerce">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Searching System</div>
+          <h2 class="section-title">探すこと自体が、楽しくなるECへ。</h2>
+          <p class="section-copy">ジャンルだけでなく、発案者・出身地・想い・職業から検索できる。商品との出会いそのものをMother Vegetableの世界観にします。</p>
+        </div>
+        <div class="search-panel">
+          <div class="search-bar"><span>どんな想いの商品を探しますか？</span><strong>Search</strong></div>
+          <div class="tag-cloud"><span class="tag">農家</span><span class="tag">先生</span><span class="tag">アスリート</span><span class="tag">子ども</span><span class="tag">ペット</span><span class="tag">地域素材</span><span class="tag">美容</span><span class="tag">食品</span><span class="tag">地球再生</span></div>
+          <div class="search-results">
+            <div class="result-card"><div class="result-art"></div><strong>地域の食卓を支える栄養パウダー</strong><span>発案者：農家 / 用途：食品</span></div>
+            <div class="result-card"><div class="result-art"></div><strong>ペットと家族のためのケア素材</strong><span>発案者：先生 / 用途：ケア</span></div>
+            <div class="result-card"><div class="result-art"></div><strong>未来の部活を支えるドリンク</strong><span>発案者：学生 / 用途：スポーツ</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">New Commerce</div>
+          <h2 class="section-title">これからは、あなたがメーカーになる。</h2>
+          <p class="section-copy">自分ひとりで売るのではなく、チームで届ける仕組み。ものづくりと販売の主役が、もっと自由になります。</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-number">01 / IDEA</div><h3>想い・アイデアを出す</h3><p>自分の商品、地域素材、届けたい相手から始める。</p></div>
+          <div class="step"><div class="step-number">02 / MATERIAL</div><h3>素材と組み合わせる</h3><p>Mother Vegetableの原材料とアイデアをつなぐ。</p></div>
+          <div class="step"><div class="step-number">03 / PRODUCT</div><h3>商品として形にする</h3><p>品質と物語を持つプロダクトへ育てる。</p></div>
+          <div class="step"><div class="step-number">04 / TEAM SALES</div><h3>メンバーと届ける</h3><p>販売メンバーと一緒に広げる参加型コマース。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Why We Do This</div>
+          <h2 class="section-title">怪しいレビューではなく、本当の想いで選ぶ世界へ。</h2>
+        </div>
+        <div class="comparison">
+          <div class="compare-card old"><h3>従来のEC</h3><ul class="compare-list"><li>広告で誘導される</li><li>レビューやランキングに左右される</li><li>誰が作ったかわかりにくい</li><li>価格比較だけで選びがち</li></ul></div>
+          <div class="compare-card new"><h3>Mother Vegetable EC</h3><ul class="compare-list"><li>作り手の想いが見える</li><li>品質と背景を両方伝える</li><li>地域や職業から出会える</li><li>納得と共感で選べる</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Our Quality</div>
+          <h2 class="section-title">すべての商品に、地球最古の力を。</h2>
+        </div>
+        <div class="quality-grid">
+          <article class="quality-card"><div class="quality-icon"></div><h3>Earth Origin</h3><p>地球最古の生命由来の原材料を、すべての商品の共通価値に。</p></article>
+          <article class="quality-card"><div class="quality-icon"></div><h3>Clean Technology</h3><p>CO₂を原材料へ変える技術から、自然の力と最新技術を融合。</p></article>
+          <article class="quality-card"><div class="quality-icon"></div><h3>Story Product</h3><p>ただ売れる商品ではなく、品質と物語の両方を持つ商品へ。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vision">
+      <div class="container">
+        <div class="section-kicker">Vision</div>
+        <h2>地球を良くする商品を、世界中の人の手で。</h2>
+        <p>子どもからシニアまで、誰もがアイデアを出せる。地域の素材も、世界の発想も、ひとつの商品になれる。これは、ECではなく地球を良くするプログラムです。</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="final-cta">
+          <h2>あなたの想いを、商品にしませんか。</h2>
+          <p>自分の商品を作りたい人。地域の素材を世界に届けたい人。Mother Vegetableを販売したい人。地球を良くする商品づくりに参加したい人へ。第2フェーズのMother Vegetable E-Commerceが始まります。</p>
+          <div class="hero-actions" style="justify-content:center; margin-top:0">
+            <a class="btn" href="mailto:hello@example.com">商品づくりを相談する</a>
+            <a class="btn secondary" href="#top">もう一度見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <strong>Mother Vegetable Project</strong>
+      <span>Static landing page design mockup / for visual review</span>
+    </div>
+  </footer>
+</body>
+</html>
