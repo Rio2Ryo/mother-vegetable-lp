@@ -307,6 +307,11 @@
     .search-panel::before { content:""; position:absolute; inset:14px; border:1px solid rgba(37,199,96,.20); border-radius: calc(var(--radius) - 8px); pointer-events:none; }
     .search-panel::after { content:""; position:absolute; left:50%; top:0; width:72%; height:1px; transform:translateX(-50%); background: linear-gradient(90deg, transparent, rgba(255,255,255,.85), var(--primary-color), transparent); box-shadow: 0 0 18px rgba(37,199,96,.55); pointer-events:none; }
     .search-prompt { position:relative; margin:0 0 24px; color:var(--secondary-color); font-family:var(--display); font-size: clamp(22px, 2.8vw, 38px); line-height:1.35; font-weight:900; text-align:center; text-shadow: 0 0 22px rgba(37,199,96,.28); }
+    .search-options { position:relative; display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin:0 auto 20px; }
+    .search-option { display:flex; align-items:center; justify-content:center; gap:9px; min-height:48px; padding:10px 14px; border:1px solid rgba(37,199,96,.62); border-radius:999px; background:rgba(0,0,0,.62); color:rgba(255,255,255,.86); font-weight:800; line-height:1.35; box-shadow: inset 0 0 18px rgba(37,199,96,.07); }
+    .search-option::before { content:""; flex:0 0 auto; width:16px; height:16px; border-radius:5px; border:1px solid var(--primary-color); background:rgba(37,199,96,.08); box-shadow:0 0 10px rgba(37,199,96,.22); }
+    .search-option.is-active { color:var(--secondary-color); border-color:var(--primary-color); background:rgba(37,199,96,.14); box-shadow: inset 0 0 20px rgba(37,199,96,.10), 0 0 24px rgba(37,199,96,.14); }
+    .search-option.is-active::before { background:var(--primary-color); box-shadow:0 0 12px rgba(37,199,96,.52); }
     .search-shell { position:relative; display:flex; align-items:center; gap:14px; min-height: 76px; padding: 10px 10px 10px 22px; border:1px solid rgba(37,199,96,.78); border-radius:999px; background: rgba(0,0,0,.78); box-shadow: inset 0 0 24px rgba(37,199,96,.10), 0 0 28px rgba(37,199,96,.14); }
     .search-icon { flex:0 0 auto; width: 34px; height: 34px; border: 2px solid var(--primary-color); border-radius:50%; position:relative; box-shadow:0 0 14px rgba(37,199,96,.32); }
     .search-icon::after { content:""; position:absolute; width:13px; height:3px; right:-9px; bottom:2px; border-radius:999px; background:var(--primary-color); transform:rotate(45deg); transform-origin:left center; box-shadow:0 0 10px rgba(37,199,96,.34); }
@@ -376,6 +381,7 @@
       .products-intro .section-title { font-size: clamp(21px, 6.1vw, 32px); line-height: 1.28; letter-spacing: 0; }
       .about-subtitle { font-size: 19px; }
       .product-card, .search-panel { padding: 22px; }
+      .search-options { grid-template-columns:1fr; }
       .search-shell { min-height: auto; align-items:flex-start; border-radius:24px; flex-direction:column; padding:18px; }
       .search-input { padding-left: 2px; }
       .search-button { width:100%; min-width:0; text-align:center; }
@@ -508,6 +514,11 @@
               <p class="section-copy"><span class="copy-line">MVプロダクトは、シャンプーや化粧品のようなカテゴリー、</span><span class="copy-line">はたまた5段階レビューなどで探すものではありません。</span><span class="copy-line">誰のアイデアなのか。どこの地域の素材なのか。</span><span class="copy-line">どんな想いが込められているのか。</span><span class="copy-line">その背景から商品と出会える、</span><span class="copy-line">新しいサーチングシステムです。</span><span class="copy-line">広告やSNSなどで誘導されるのではなく、</span><span class="copy-line">自分の感性で出会うECへ。</span></p>
               <div class="search-panel" aria-label="MV Product検索導線">
                 <p class="search-prompt">早速検索してみよう</p>
+                <div class="search-options" aria-label="検索方法の選択肢">
+                  <span class="search-option is-active" aria-current="true">想いで探す</span>
+                  <span class="search-option">出身地でさがす</span>
+                  <span class="search-option">発案者の職業で探す</span>
+                </div>
                 <div class="search-shell" role="search" aria-label="想いで探す検索フォームのイメージ">
                   <span class="search-icon" aria-hidden="true"></span>
                   <span class="search-input">想いで探す</span>
