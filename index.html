@@ -230,6 +230,7 @@
     .section-kicker { color: var(--primary-color); font-family: var(--latin); text-transform: uppercase; letter-spacing: .10em; font-weight: 600; font-size: 13px; margin-bottom: 13px; }
     .section-title { font-family: var(--display); font-size: clamp(30px, 3.8vw, 52px); line-height: 1.18; letter-spacing: .01em; color: var(--primary-color); font-weight: 700; text-shadow: 0 0 18px rgba(37,199,96,.30); }
     .section-title .heading-line { display: block; white-space: nowrap; }
+    .section-title .mobile-heading-line { display:inline; white-space:nowrap; }
     .section-title::after { margin: 20px auto 0; background: linear-gradient(90deg, transparent, var(--primary-color), var(--third-color), transparent); }
     .section-copy { color: var(--text-muted); font-size: 16px; max-width: 680px; margin: 20px auto 0; }
     .panel, .product-card, .search-panel, .step {
@@ -377,9 +378,10 @@
       .eyebrow { font-size: 13px; }
       .hero .lead { font-size: 14px; line-height:1.8; }
       .sp-break { display:block; }
-      .hero-actions .btn { width:100%; }
+      .hero-actions .btn { width:min(100%, 280px); }
       .about-simple .section-title { font-size: clamp(32px, 10vw, 58px); line-height: 1.08; }
       .products-intro .section-title { font-size: clamp(21px, 6.1vw, 32px); line-height: 1.28; letter-spacing: 0; }
+      .products-intro .mobile-heading-line { display:block; }
       .about-subtitle { font-size: 19px; }
       .product-card, .search-panel { padding: 22px; }
       .search-options { grid-template-columns:1fr; }
@@ -453,7 +455,7 @@
     <section id="products">
       <div class="container">
         <div class="section-head products-intro">
-          <h2 class="section-title fixed-break"><span class="heading-line">Mother Vegetable から生まれた</span><span class="heading-line">2つの「地球の力」が全てのアイテムに。</span></h2>
+          <h2 class="section-title fixed-break"><span class="heading-line">Mother Vegetableから生まれた</span><span class="heading-line">2つの「地球の力」が<span class="mobile-heading-line">すべてのアイテムに。</span></span></h2>
         </div>
         <div class="products">
           <article class="product-card achieve">
