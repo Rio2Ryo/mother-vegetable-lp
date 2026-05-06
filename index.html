@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mother Vegetable Project | 地球原材料から生まれる、これからの商品づくり。</title>
+  <title>Mother Vegetable Project | 生産者の想い×日本の魅力×地球最古の生命の力</title>
   <meta name="description" content="地球最古の生命力と人の想いから生まれる、Mother VegetableプロジェクトのLPトップページ静的デザインモック。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #25C760;
@@ -24,8 +24,10 @@
       --card-shadow: 0 15px 40px rgba(37, 199, 96, 0.12);
       --radius: 12px;
       --max: 1400px;
-      --sans: Arial, 'Noto Sans JP', system-ui, sans-serif;
-      --display: 'Lexend', Arial, 'Noto Sans JP', sans-serif;
+      --sans: 'Noto Serif JP', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
+      --display: 'Noto Serif JP', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
+      --ui: 'Noto Sans JP', Arial, system-ui, sans-serif;
+      --latin: 'Lexend', 'Noto Sans JP', sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -87,7 +89,7 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 2px 20px rgba(0, 0, 0, .35);
     }
-    .brand { display: flex; align-items: center; gap: 15px; font-family: var(--display); font-weight: 700; color: var(--primary-color); letter-spacing: .02em; }
+    .brand { display: flex; align-items: center; gap: 15px; font-family: var(--display); font-weight: 600; color: var(--primary-color); letter-spacing: .04em; }
     .brand-mark {
       width: 64px;
       height: 64px;
@@ -115,7 +117,7 @@
       border: 1px solid var(--primary-color);
       background: var(--primary-color);
       color: #001d0c;
-      font-family: var(--sans);
+      font-family: var(--ui);
       font-weight: 700;
       letter-spacing: .01em;
       transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
@@ -174,9 +176,9 @@
       border: 1px solid rgba(37, 199, 96, .52);
       color: var(--primary-color);
       background: rgba(0, 0, 0, .42);
-      font-family: var(--display);
+      font-family: var(--latin);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: .12em;
       text-transform: uppercase;
       box-shadow: 0 0 18px rgba(37,199,96,.16);
@@ -186,11 +188,11 @@
     h1 {
       margin-top: 24px;
       font-family: var(--display);
-      font-size: clamp(42px, 6vw, 80px);
-      line-height: 1.08;
-      letter-spacing: .01em;
-      color: var(--primary-color);
-      font-weight: 800;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1.18;
+      letter-spacing: .025em;
+      color: var(--secondary-color);
+      font-weight: 700;
       text-shadow: 0 0 20px rgba(37, 199, 96, .5);
     }
     h1::after, .section-title::after {
@@ -209,11 +211,90 @@
       color: var(--text-muted);
       font-size: clamp(16px, 1.4vw, 20px);
       line-height: 2;
-      font-weight: 400;
+      font-weight: 500;
       text-shadow: 0 2px 4px rgba(0,0,0,.55);
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .concept-diagram {
+      margin-top: 30px;
+      padding: 22px;
+      border: 1px solid var(--line-color);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(0,0,0,.76), rgba(37,199,96,.08));
+      box-shadow: 0 12px 34px rgba(0,0,0,.28), 0 0 26px rgba(37,199,96,.10);
+    }
+    .diagram-title {
+      margin: 0 0 16px;
+      color: var(--primary-color);
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+    .diagram-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      align-items: stretch;
+    }
+    .diagram-cell {
+      position: relative;
+      min-height: 118px;
+      padding: 18px 16px;
+      border: 1px solid var(--line-soft);
+      border-radius: 10px;
+      background: rgba(0,0,0,.56);
+    }
+    .diagram-cell::after {
+      content: "+";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--primary-color);
+      border-radius: 50%;
+      background: #000;
+      color: var(--primary-color);
+      font-family: var(--latin);
+      font-weight: 700;
+      z-index: 2;
+    }
+    .diagram-cell:nth-child(3)::after { content: "="; }
+    .diagram-label {
+      display: block;
+      color: var(--primary-color);
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.45;
+      letter-spacing: .04em;
+    }
+    .diagram-note {
+      display: block;
+      margin-top: 8px;
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .diagram-result {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border: 1px solid rgba(37,199,96,.58);
+      border-radius: 10px;
+      background: rgba(37,199,96,.12);
+      text-align: center;
+      color: var(--secondary-color);
+      font-size: clamp(16px, 1.35vw, 20px);
+      font-weight: 700;
+      letter-spacing: .06em;
+      box-shadow: inset 0 0 22px rgba(37,199,96,.08);
+    }
+    .diagram-result span { color: var(--primary-color); }
     .chip, .tag {
       display: inline-flex;
       align-items: center;
@@ -271,8 +352,8 @@
 
     section { padding: 96px 0; }
     .section-head { max-width: 900px; margin: 0 auto 42px; text-align: center; }
-    .section-kicker { color: var(--primary-color); font-family: var(--display); text-transform: uppercase; letter-spacing: .10em; font-weight: 800; font-size: 14px; margin-bottom: 13px; }
-    .section-title { font-family: var(--display); font-size: clamp(30px, 3.8vw, 52px); line-height: 1.18; letter-spacing: .01em; color: var(--primary-color); font-weight: 800; text-shadow: 0 0 18px rgba(37,199,96,.30); }
+    .section-kicker { color: var(--primary-color); font-family: var(--latin); text-transform: uppercase; letter-spacing: .10em; font-weight: 600; font-size: 13px; margin-bottom: 13px; }
+    .section-title { font-family: var(--display); font-size: clamp(30px, 3.8vw, 52px); line-height: 1.18; letter-spacing: .01em; color: var(--primary-color); font-weight: 700; text-shadow: 0 0 18px rgba(37,199,96,.30); }
     .section-title::after { margin: 20px auto 0; background: linear-gradient(90deg, transparent, var(--primary-color), var(--third-color), transparent); }
     .section-copy { color: var(--text-muted); font-size: 17px; max-width: 760px; margin: 18px auto 0; }
     .panel, .product-card, .search-panel, .compare-card, .quality-card, .step {
@@ -394,6 +475,12 @@
       h1 { font-size: clamp(38px, 11vw, 54px); }
       h1::after { width: 88%; }
       .hero .lead { font-size: 15px; line-height:1.9; }
+      .concept-diagram { padding: 18px; }
+      .diagram-flow { grid-template-columns: 1fr; }
+      .diagram-cell { min-height: auto; }
+      .diagram-cell::after { right: 50%; top: auto; bottom: -18px; transform: translateX(50%); }
+      .diagram-cell:nth-child(3)::after { content: "="; }
+      .diagram-result { margin-top: 22px; }
       .hero-actions .btn { width:100%; }
       .orb-stage { min-height: 500px; }
       .orb-stage::before { inset: 90px 40px; }
@@ -437,26 +524,35 @@
       <div class="container hero-grid">
         <div>
           <span class="eyebrow"><span class="pulse-dot"></span>Mother Vegetable Project</span>
-          <h1>地球原材料から生まれる、<br>これからの商品づくり。</h1>
-          <p class="lead">35億年前、地球に最初の酸素と緑をもたらした生命。その力を、食べるもの、洗うもの、整えるものへ。Mother Vegetableは、地球の力と人の想いから生まれる、新しいプロダクトづくりの始まりです。</p>
+          <h1>生産者の想い×<br>日本の魅力×<br>地球最古の生命の力</h1>
+          <p class="lead">Mother Vegetable Projectは、<br>人の想いと、地域に眠る素材と、地球最古の生命が持つ力をひとつにし、<br>これまでにない商品で、あなたと地球を癒すプロジェクトです。</p>
+          <div class="concept-diagram" aria-label="Mother Vegetable Projectの概念図">
+            <p class="diagram-title">Project Concept</p>
+            <div class="diagram-flow" role="list">
+              <div class="diagram-cell" role="listitem"><span class="diagram-label">生産者の想い</span><span class="diagram-note">つくり手の願い、届けたい人へのまなざし</span></div>
+              <div class="diagram-cell" role="listitem"><span class="diagram-label">日本の魅力<br>地域に眠る素材</span><span class="diagram-note">土地の個性、文化、まだ知られていない価値</span></div>
+              <div class="diagram-cell" role="listitem"><span class="diagram-label">地球最古の<br>生命の力</span><span class="diagram-note">Mother Vegetableが持つ、自然由来の生命力</span></div>
+            </div>
+            <div class="diagram-result">これまでにない商品で、<span>あなたと地球を癒す</span></div>
+          </div>
           <div class="hero-actions">
             <a class="btn" href="#contact">プロジェクトに参加する</a>
             <a class="btn secondary" href="#about">Mother Vegetableとは</a>
           </div>
           <div class="hero-meta" aria-label="プロジェクトの特徴">
-            <span class="chip">CO₂ → 原材料</span>
-            <span class="chip">食品・美容・日用品へ展開</span>
-            <span class="chip">ストーリーEC</span>
-            <span class="chip">参加型コマース</span>
+            <span class="chip">生産者の想い</span>
+            <span class="chip">日本の魅力</span>
+            <span class="chip">地域素材</span>
+            <span class="chip">あなたと地球を癒す</span>
           </div>
         </div>
         <div class="orb-stage" aria-label="地球・素材・商品・人の想いが循環する抽象ビジュアル">
           <div class="orbit-line"></div>
           <span class="molecule m1"></span><span class="molecule m2"></span><span class="molecule m3"></span><span class="molecule m4"></span><span class="molecule m5"></span>
-          <div class="floating-card one"><small>Origin</small>地球最古の生命力</div>
-          <div class="floating-card two"><small>Material</small>CO₂を素材へ</div>
-          <div class="floating-card three"><small>Product</small>食べる・洗う・整える</div>
-          <div class="floating-card four"><small>Story</small>人の想いが価値になる</div>
+          <div class="floating-card one"><small>Producer</small>生産者の想い</div>
+          <div class="floating-card two"><small>Japan</small>日本の魅力と地域素材</div>
+          <div class="floating-card three"><small>Origin</small>地球最古の生命力</div>
+          <div class="floating-card four"><small>Healing</small>あなたと地球を癒す</div>
         </div>
       </div>
     </section>
