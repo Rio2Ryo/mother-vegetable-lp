@@ -307,9 +307,6 @@
     .commerce-head .section-title { max-width: 820px; margin: 0 auto; }
     .commerce-subtitle { margin: 18px auto 0; color: var(--secondary-color); font-family: var(--display); font-size: clamp(18px, 2vw, 28px); line-height: 1.45; font-weight: 800; letter-spacing: .01em; }
     .commerce-intro { max-width: 900px; margin: 30px auto 0; text-align:center; }
-    .commerce-copy .section-copy { max-width: 760px; margin-left:auto; margin-right:auto; line-height: 2.05; }
-    .commerce-copy .copy-line { display:block; }
-    .commerce-copy .copy-spacer { display:block; height:18px; }
     .commerce-copy .search-panel { margin: 34px auto 0; }
     @media (prefers-reduced-motion: no-preference) {
       .float-reveal { opacity:0; transform: translateY(30px) scale(.96); transition: opacity .9s ease, transform .9s cubic-bezier(.18,.84,.31,1); }
@@ -374,9 +371,6 @@
       .products { grid-template-columns:1fr; }
       .mv-force-grid, .story-grid { grid-template-columns:1fr; }
       .commerce-intro { max-width: 720px; }
-      .commerce-copy .copy-line { display:inline; }
-      .commerce-copy .copy-line::after { content:"\A"; white-space:pre; }
-      .commerce-copy .copy-spacer { height:16px; }
       .mv-force-plus { min-height: 34px; }
       .steps { grid-template-columns: repeat(2, 1fr); }
       .owner-flow .steps { grid-template-columns: 1fr; max-width: 720px; margin-left:auto; margin-right:auto; gap:36px; }
@@ -530,11 +524,10 @@
       <div class="container">
         <div class="section-head commerce-head">
           <div class="section-kicker">Searching System</div>
-          <h2 class="section-title"><span class="mobile-break-pc">商品は、物語から検索しよう</span><span class="mobile-break-sp"><span class="sp-line">商品は</span><span class="sp-line">物語から検索しよう</span></span></h2>
+          <h2 class="section-title fixed-break"><span class="heading-line">商品は</span><span class="heading-line">物語・人・国から検索しよう</span></h2>
           <p class="commerce-subtitle">探すこと自体が、楽しくなるECへ</p>
           <div class="commerce-intro">
             <div class="commerce-copy">
-              <p class="section-copy"><span class="copy-line">MVプロダクトは、商品カテゴリーや、</span><span class="copy-line">5段階レビューなどで探すものではありません。</span><span class="copy-spacer" aria-hidden="true"></span><span class="copy-line">誰のアイデアか。どこの地域のものか。</span><span class="copy-line">どんな想いが込められているのか。</span><span class="copy-spacer" aria-hidden="true"></span><span class="copy-line">その背景から商品と出会える、</span><span class="copy-line">新しいサーチングシステムです。</span><span class="copy-spacer" aria-hidden="true"></span><span class="copy-line">広告やSNSなどで誘導されるのではなく、</span><span class="copy-line">自分の感性で出会うECへ。</span></p>
               <div class="search-panel" aria-label="MV Product検索導線">
                 <p class="search-prompt">早速検索してみよう</p>
                 <div class="search-options" aria-label="検索方法の選択肢">
